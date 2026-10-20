@@ -444,12 +444,12 @@ textarea { min-height: 130px; resize: vertical; }
   .callbar svg { width: 20px; height: 20px; }
 }
 
-/* SEO pages: breadcrumbs, five-column footer, comparison table */
+/* SEO pages: breadcrumbs, six-column footer, comparison table */
 .crumbs { font-size: .9rem; margin-bottom: 18px; color: var(--slate); letter-spacing: .04em; }
 .crumbs a { color: var(--brass-light); text-decoration: none; }
 .crumbs a:hover { text-decoration: underline; }
 .crumbs span[aria-hidden] { margin: 0 6px; opacity: .6; }
-.foot-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr 1.1fr; gap: 32px; }
+.foot-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr 1.1fr 1.1fr; gap: 28px; }
 .areas span a { color: inherit; text-decoration: none; }
 .areas span a:hover { color: var(--brass-light); }
 .table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }

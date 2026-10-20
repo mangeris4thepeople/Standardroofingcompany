@@ -12,6 +12,7 @@ Plain static site: HTML, CSS, and one JS file. No build step, no dependencies.
 | `services.html` | Replacement, repair, commercial, inspections, gutters |
 | `storm-damage.html` | Hail and storm damage, insurance help, Colorado roofing law, FAQ |
 | `casualty.html` | Casualty and litigation services for attorneys, with attorney intake form |
+| `roofing-expert-witness-colorado.html`, `hail-damage-cause-of-loss-inspection.html`, `roofing-construction-defect-review.html`, `roofing-fall-protection-standard-of-care.html`, `roof-repair-cost-estimates-insurance-appraisal.html` | Litigation landing pages (expert witness hub, hail cause of loss, construction defect, fall protection standard of care, cost estimates and appraisal), each with Service and FAQ schema; the CTA links to the intake form at `casualty.html#intake` |
 | `about.html` | Company story and credentials |
 | `contact.html` | Free inspection request form |
 | `404.html` | Not found page |
