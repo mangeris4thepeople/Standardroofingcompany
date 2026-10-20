@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://standardroofingcompany.net/</loc></url>
-  <url><loc>https://standardroofingcompany.net/services.html</loc></url>
-  <url><loc>https://standardroofingcompany.net/storm-damage.html</loc></url>
-  <url><loc>https://standardroofingcompany.net/casualty.html</loc></url>
-  <url><loc>https://standardroofingcompany.net/about.html</loc></url>
-  <url><loc>https://standardroofingcompany.net/contact.html</loc></url>
+  <url><loc>https://standardroofingcompany.net/</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://standardroofingcompany.net/services.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://standardroofingcompany.net/specialty-roofing.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://standardroofingcompany.net/metal-roofing.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://standardroofingcompany.net/slate-roofing.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://standardroofingcompany.net/tile-roofing.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://standardroofingcompany.net/cedar-shake-roofing.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://standardroofingcompany.net/synthetic-roofing.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://standardroofingcompany.net/roof-coatings.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://standardroofingcompany.net/storm-damage.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://standardroofingcompany.net/service-areas.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://standardroofingcompany.net/roofing-loveland-co.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://standardroofingcompany.net/roofing-fort-collins-co.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://standardroofingcompany.net/roofing-windsor-co.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://standardroofingcompany.net/roofing-greeley-co.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://standardroofingcompany.net/roofing-longmont-co.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://standardroofingcompany.net/roofing-estes-park-co.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://standardroofingcompany.net/roofing-berthoud-co.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://standardroofingcompany.net/roofing-johnstown-co.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://standardroofingcompany.net/roofing-timnath-co.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://standardroofingcompany.net/roofing-wellington-co.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://standardroofingcompany.net/mountain-roofing.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://standardroofingcompany.net/casualty.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://standardroofingcompany.net/about.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://standardroofingcompany.net/contact.html</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
