@@ -4,12 +4,12 @@
   document.documentElement.classList.add("js");
 
   // ---- Settings ----
-  // Where form requests go. Forms post as JSON to FORM_ENDPOINT (FormSubmit, which
-  // emails each request to LEAD_EMAIL). If the endpoint is unreachable, the visitor's
-  // email app opens with the request filled in, addressed to LEAD_EMAIL.
+  // Where form requests go. Forms post as JSON to FORM_ENDPOINT, a server-side relay
+  // (api/contact.js) that emails the request to an inbox kept off the public site.
+  // If the endpoint is unreachable, the visitor's text app opens with the request filled in.
   var CONFIG = {
-    FORM_ENDPOINT: "https://formsubmit.co/ajax/info@standardroofingcompany.net",
-    LEAD_EMAIL: "info@standardroofingcompany.net",
+    FORM_ENDPOINT: "/api/contact",
+    LEAD_EMAIL: "",
     SMS_NUMBER: "+19704305884",
     PHONE_DISPLAY: "(970) 430-5884"
   };
