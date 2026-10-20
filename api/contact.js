@@ -5,7 +5,6 @@
 const DESTINATION = process.env.CONTACT_TO || 'douglas.mangeris@gmail.com';
 const SITE = 'https://standardroofingcompany.net';
 const PHONE = '(970) 430-5884';
-const SELFTEST = 'c944e33655c2d677'; // temporary delivery check, removed after testing
 
 const clean = (v, max = 3000) => String(v == null ? '' : v).replace(/\r/g, '').trim().slice(0, max);
 const SKIP = new Set(['company_website', 'started', '_subject', '_replyto', '_template', '_captcha', '_cc', '_next', '_autoresponse']);
@@ -23,10 +22,6 @@ async function relay(subject, fields, replyTo) {
 }
 
 module.exports = async (req, res) => {
-  if (req.method === 'GET' && SELFTEST && req.query && req.query.selftest === SELFTEST) {
-    const out = await relay('Website form delivery test', { Name: 'Delivery test', Message: 'Test of the standardroofingcompany.net form relay. Safe to ignore.' });
-    return res.status(200).json({ relayStatus: out.status, ok: out.ok, response: out.data });
-  }
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
     return res.status(405).json({ ok: false, error: 'Method not allowed' });
