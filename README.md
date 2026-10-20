@@ -41,8 +41,8 @@ In `main.js`, the `CONFIG` block at the top:
 
 Domain: canonical URLs, `sitemap.xml`, and `robots.txt` assume `https://standardroofingcompany.net`. Find and replace if the domain is different.
 
-Analytics: add the Google Analytics tag to the `<head>` of each page when a property is created.
+Analytics: every page loads `analytics.js`. Set `GA_ID` at the top of that file to the GA4 measurement ID (starts with G-) and the whole site starts reporting page views plus `phone_click`, `text_click`, and `generate_lead` events. Left empty, it does nothing.
 
 ## Brand
 
-Forest green `#14261d` and brass `#b08d57`, Barlow Condensed headings.
+Storm theme: near-black forest green (`#050806` to `#121e17`), burnished brass `#a8844e`, bone text `#d6cfbf`, Barlow Condensed headings. The home hero is an animated supercell (lightning flash, falling hail, drifting clouds); all motion stops for visitors with reduced-motion turned on.

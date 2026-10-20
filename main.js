@@ -91,6 +91,10 @@
       data.page = location.pathname;
       var subject = (form.getAttribute("data-subject") || "Roof Inspection Request") + " | " + (data.name || "");
 
+      function lead(method) {
+        try { window.dispatchEvent(new CustomEvent("srclead", { detail: { form: form.id, method: method } })); } catch (err) {}
+      }
+
       function done(msg) {
         status.textContent = msg;
         status.style.color = "";
@@ -105,6 +109,7 @@
         }).then(function (r) {
           if (!r.ok) throw new Error("bad status");
           form.reset();
+          lead("endpoint");
           done("Thank you. We received your request and will reach out within one business day.");
         }).catch(function () {
           done("Something went wrong sending the form. Please call or text " + CONFIG.PHONE_DISPLAY + ".");
@@ -116,11 +121,13 @@
         return labelFor(form, k) + ": " + data[k];
       }).join("\n");
       if (CONFIG.LEAD_EMAIL) {
+        lead("email");
         window.location.href = "mailto:" + CONFIG.LEAD_EMAIL +
           "?subject=" + encodeURIComponent(subject) +
           "&body=" + encodeURIComponent(body);
         done("Your email app should open with your request filled in. Just hit send. Or call or text " + CONFIG.PHONE_DISPLAY + ".");
       } else {
+        lead("sms");
         window.location.href = "sms:" + CONFIG.SMS_NUMBER + "?&body=" + encodeURIComponent(subject + "\n" + body);
         done("Your messages app should open with your request filled in. Just hit send. If nothing opened, call or text " + CONFIG.PHONE_DISPLAY + ".");
       }
