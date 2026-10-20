@@ -29,7 +29,7 @@ In `main.js`, the `CONFIG` block at the top:
 - `FORM_ENDPOINT`: paste a Formspree, Web3Forms, or Worker URL to receive form submissions directly. Left empty, forms open a pre-filled email to `LEAD_EMAIL`, or a pre-filled text message to the business line if `LEAD_EMAIL` is also empty.
 - `LEAD_EMAIL`: where form requests go.
 
-Domain: canonical URLs, `sitemap.xml`, and `robots.txt` assume `https://standardroofingcompany.com`. Find and replace if the domain is different.
+Domain: canonical URLs, `sitemap.xml`, and `robots.txt` assume `https://standardroofingcompany.net`. Find and replace if the domain is different.
 
 Analytics: add the Google Analytics tag to the `<head>` of each page when a property is created.
 
