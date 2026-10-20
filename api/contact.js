@@ -28,6 +28,8 @@ module.exports = async (req, res) => {
   }
   const b = req.body || {};
   if (clean(b.company_website)) return res.status(200).json({ ok: true }); // bot trap
+  const started = Number(b.started || 0);
+  if (started && Date.now() - started < 3000) return res.status(200).json({ ok: true }); // filled too fast
 
   const fields = {};
   for (const [k, v] of Object.entries(b)) {
@@ -41,7 +43,8 @@ module.exports = async (req, res) => {
   if (!name || (!email && !phone)) {
     return res.status(400).json({ ok: false, error: 'Please include your name and a phone number or email.' });
   }
-  const subject = clean(b._subject, 150) || 'Roof Inspection Request | ' + name;
+  const form = clean(b.form_kind, 40);
+  const subject = (form === 'attorney' ? 'Casualty / Litigation Matter | ' : 'Roof Inspection Request | ') + name;
   const replyTo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? email : '';
 
   try {

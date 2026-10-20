@@ -92,6 +92,7 @@
         data[k] = data[k] ? data[k] + ", " + v : v;
       });
       data.page = location.pathname;
+      data.form_kind = form.id === "attorney-form" ? "attorney" : "inspection";
       var subject = (form.getAttribute("data-subject") || "Roof Inspection Request") + " | " + (data.name || "");
 
       function lead(method) {
@@ -139,8 +140,9 @@
             });
           });
         }
-        post(CONFIG.FORM_ENDPOINT).catch(function () {
-          if (!CONFIG.FORM_BACKUP) throw new Error("not delivered");
+        post(CONFIG.FORM_ENDPOINT).catch(function (err) {
+          if (!CONFIG.FORM_BACKUP) throw err;
+          payload._subject = subject + " (retry)";
           return post(CONFIG.FORM_BACKUP);
         }).then(function () {
           form.reset();

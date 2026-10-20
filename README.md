@@ -42,7 +42,7 @@ In `main.js`, the `CONFIG` block at the top:
 
 ## Search engines
 
-- Visit `/api/indexnow` after publishing pages. It submits every sitemap URL to IndexNow (Bing and partners) and shows the status code; 200 or 202 means accepted.
+- After publishing pages, open `/api/indexnow?key=<the IndexNow key from the .txt file in the site root>` (or send a POST). It submits every sitemap URL to IndexNow (Bing and partners) and shows the status code; 200 or 202 means accepted.
 
 Domain: canonical URLs, `sitemap.xml`, and `robots.txt` assume `https://standardroofingcompany.net`. Find and replace if the domain is different.
 

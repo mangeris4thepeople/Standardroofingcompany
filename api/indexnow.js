@@ -5,6 +5,9 @@ const HOST = 'standardroofingcompany.net';
 const KEY = '7c79ee10fd44001fcfcf4feb232cff02';
 
 module.exports = async (req, res) => {
+  if (req.method !== 'POST' && !(req.query && req.query.key === KEY)) {
+    return res.status(405).json({ error: 'Send a POST request, or GET with ?key=<your IndexNow key>.' });
+  }
   try {
     const xml = await (await fetch('https://' + HOST + '/sitemap.xml?t=' + Date.now(), { cache: 'no-store' })).text();
     const urlList = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim());
