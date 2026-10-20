@@ -4,11 +4,12 @@
   document.documentElement.classList.add("js");
 
   // ---- Settings ----
-  // Where form requests go. If FORM_ENDPOINT is set (Formspree, Web3Forms, Cloudflare
-  // Worker, etc.) the form posts there as JSON. Otherwise it opens an email draft.
+  // Where form requests go. Forms post as JSON to FORM_ENDPOINT (FormSubmit, which
+  // emails each request to LEAD_EMAIL). If the endpoint is unreachable, the visitor's
+  // email app opens with the request filled in, addressed to LEAD_EMAIL.
   var CONFIG = {
-    FORM_ENDPOINT: "",
-    LEAD_EMAIL: "",
+    FORM_ENDPOINT: "https://formsubmit.co/ajax/info@standardroofingcompany.net",
+    LEAD_EMAIL: "info@standardroofingcompany.net",
     SMS_NUMBER: "+19704305884",
     PHONE_DISPLAY: "(970) 430-5884"
   };
@@ -101,36 +102,51 @@
         status.classList.add("show");
       }
 
+      var body = Object.keys(data).map(function (k) {
+        return labelFor(form, k) + ": " + data[k];
+      }).join("\n");
+
+      function fallback() {
+        if (CONFIG.LEAD_EMAIL) {
+          lead("email");
+          window.location.href = "mailto:" + CONFIG.LEAD_EMAIL +
+            "?subject=" + encodeURIComponent(subject) +
+            "&body=" + encodeURIComponent(body);
+          done("Your email app should open with your request filled in. Just hit send. Or call or text " + CONFIG.PHONE_DISPLAY + ".");
+        } else {
+          lead("sms");
+          window.location.href = "sms:" + CONFIG.SMS_NUMBER + "?&body=" + encodeURIComponent(subject + "\n" + body);
+          done("Your messages app should open with your request filled in. Just hit send. If nothing opened, call or text " + CONFIG.PHONE_DISPLAY + ".");
+        }
+      }
+
       if (CONFIG.FORM_ENDPOINT) {
+        var btn = form.querySelector('[type="submit"]');
+        if (btn) btn.disabled = true;
+        done("Sending...");
+        var payload = Object.assign({ _subject: subject, _template: "table", _captcha: "false" }, data);
+        if (data.email) payload._replyto = data.email;
         fetch(CONFIG.FORM_ENDPOINT, {
           method: "POST",
           headers: { "Content-Type": "application/json", "Accept": "application/json" },
-          body: JSON.stringify(Object.assign({ _subject: subject }, data))
+          body: JSON.stringify(payload)
         }).then(function (r) {
-          if (!r.ok) throw new Error("bad status");
+          return r.json().catch(function () { return {}; }).then(function (j) {
+            if (!r.ok || String(j.success) === "false") throw new Error("not delivered");
+          });
+        }).then(function () {
           form.reset();
           lead("endpoint");
           done("Thank you. We received your request and will reach out within one business day.");
         }).catch(function () {
-          done("Something went wrong sending the form. Please call or text " + CONFIG.PHONE_DISPLAY + ".");
+          fallback();
+        }).then(function () {
+          if (btn) btn.disabled = false;
         });
         return;
       }
 
-      var body = Object.keys(data).map(function (k) {
-        return labelFor(form, k) + ": " + data[k];
-      }).join("\n");
-      if (CONFIG.LEAD_EMAIL) {
-        lead("email");
-        window.location.href = "mailto:" + CONFIG.LEAD_EMAIL +
-          "?subject=" + encodeURIComponent(subject) +
-          "&body=" + encodeURIComponent(body);
-        done("Your email app should open with your request filled in. Just hit send. Or call or text " + CONFIG.PHONE_DISPLAY + ".");
-      } else {
-        lead("sms");
-        window.location.href = "sms:" + CONFIG.SMS_NUMBER + "?&body=" + encodeURIComponent(subject + "\n" + body);
-        done("Your messages app should open with your request filled in. Just hit send. If nothing opened, call or text " + CONFIG.PHONE_DISPLAY + ".");
-      }
+      fallback();
     });
   });
 })();

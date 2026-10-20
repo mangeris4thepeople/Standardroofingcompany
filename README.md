@@ -36,8 +36,8 @@ Plain static site: HTML, CSS, and one JS file. No build step, no dependencies.
 
 In `main.js`, the `CONFIG` block at the top:
 
-- `FORM_ENDPOINT`: paste a Formspree, Web3Forms, or Worker URL to receive form submissions directly. Left empty, forms open a pre-filled email to `LEAD_EMAIL`, or a pre-filled text message to the business line if `LEAD_EMAIL` is also empty.
-- `LEAD_EMAIL`: where form requests go.
+- `FORM_ENDPOINT`: FormSubmit endpoint that emails each form request to the lead inbox. Currently `https://formsubmit.co/ajax/info@standardroofingcompany.net`. FormSubmit sends a one-time activation email to that inbox on the first submission; click it once or requests will not be delivered.
+- `LEAD_EMAIL`: `info@standardroofingcompany.net`. If the endpoint fails, the visitor's email app opens with the request addressed here.
 
 Domain: canonical URLs, `sitemap.xml`, and `robots.txt` assume `https://standardroofingcompany.net`. Find and replace if the domain is different.
 
