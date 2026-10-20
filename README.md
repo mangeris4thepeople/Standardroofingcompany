@@ -30,9 +30,7 @@ Plain static site: HTML, CSS, and one JS file. No build step, no dependencies.
 
 ## Deploy
 
-**Cloudflare Pages:** Connect this repo, framework preset "None", build command empty, output directory `/`.
-
-**GitHub Pages:** Settings > Pages > Deploy from branch > `main` / root.
+**Vercel:** the repo is connected; every push to `main` deploys to standardroofingcompany.net. Framework preset "Other", no build command, output directory `/`.
 
 ## Settings to change
 
