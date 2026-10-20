@@ -2,7 +2,7 @@
 // Site forms post JSON here; this forwards the request by email. The destination
 // inbox exists only on the server (env CONTACT_TO or the fallback below) and is
 // never sent to the browser.
-const DESTINATION = process.env.CONTACT_TO || 'douglas.mangeris@gmail.com';
+const DESTINATION = process.env.CONTACT_TO || 'df411baad8fa5e3fa0848e207cddfed8';
 const SITE = 'https://standardroofingcompany.net';
 const PHONE = '(970) 430-5884';
 
