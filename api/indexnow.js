@@ -6,7 +6,7 @@ const KEY = '7c79ee10fd44001fcfcf4feb232cff02';
 
 module.exports = async (req, res) => {
   try {
-    const xml = await (await fetch('https://' + HOST + '/sitemap.xml')).text();
+    const xml = await (await fetch('https://' + HOST + '/sitemap.xml?t=' + Date.now(), { cache: 'no-store' })).text();
     const urlList = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim());
     const r = await fetch('https://api.indexnow.org/indexnow', {
       method: 'POST',
