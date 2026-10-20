@@ -4,11 +4,13 @@
   document.documentElement.classList.add("js");
 
   // ---- Settings ----
-  // Where form requests go. Forms post as JSON to FORM_ENDPOINT, a server-side relay
-  // (api/contact.js) that emails the request to an inbox kept off the public site.
+  // Where form requests go. Forms post as JSON to FORM_ENDPOINT, a FormSubmit alias that
+  // emails the request to the lead inbox without publishing the address. FORM_BACKUP is a
+  // server-side relay (api/contact.js) tried if the first post fails.
   // If the endpoint is unreachable, the visitor's text app opens with the request filled in.
   var CONFIG = {
-    FORM_ENDPOINT: "/api/contact",
+    FORM_ENDPOINT: "https://formsubmit.co/ajax/df411baad8fa5e3fa0848e207cddfed8",
+    FORM_BACKUP: "/api/contact",
     LEAD_EMAIL: "",
     SMS_NUMBER: "+19704305884",
     PHONE_DISPLAY: "(970) 430-5884"
@@ -126,14 +128,20 @@
         done("Sending...");
         var payload = Object.assign({ _subject: subject, _template: "table", _captcha: "false" }, data);
         if (data.email) payload._replyto = data.email;
-        fetch(CONFIG.FORM_ENDPOINT, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", "Accept": "application/json" },
-          body: JSON.stringify(payload)
-        }).then(function (r) {
-          return r.json().catch(function () { return {}; }).then(function (j) {
-            if (!r.ok || String(j.success) === "false") throw new Error("not delivered");
+        function post(url) {
+          return fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify(payload)
+          }).then(function (r) {
+            return r.json().catch(function () { return {}; }).then(function (j) {
+              if (!r.ok || String(j.success) === "false") throw new Error("not delivered");
+            });
           });
+        }
+        post(CONFIG.FORM_ENDPOINT).catch(function () {
+          if (!CONFIG.FORM_BACKUP) throw new Error("not delivered");
+          return post(CONFIG.FORM_BACKUP);
         }).then(function () {
           form.reset();
           lead("endpoint");
