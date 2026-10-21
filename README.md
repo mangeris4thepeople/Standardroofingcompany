@@ -38,7 +38,7 @@ Plain static site: HTML, CSS, and one JS file. No build step, no dependencies.
 In `main.js`, the `CONFIG` block at the top:
 
 - `FORM_ENDPOINT`: `/api/contact`, a Vercel function (`api/contact.js`) that emails each form request to the lead inbox. The inbox address lives only in that function (or the `CONTACT_TO` environment variable) and never appears in the public site. FormSubmit sends a one-time activation email to that inbox on the first submission; click it once or requests will not be delivered.
-- `LEAD_EMAIL`: left empty so no address is published. If the relay fails, the visitor's text app opens with the request filled in.
+- `LEAD_EMAIL`: left empty, so if the relay fails the visitor's text app opens with the request filled in. The public business email, info@standardroofingcompany.net (Namecheap Private Email), is listed on the contact page, the casualty page, every footer, and in the JSON-LD `email` field.
 
 ## Search engines
 
