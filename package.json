@@ -1,0 +1,18 @@
+{
+  "name": "standardroofingcompany",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Static site for Standard Roofing Company, Loveland, Colorado. Content in content/, generator in scripts/, output in dist/.",
+  "scripts": {
+    "validate": "node scripts/validate-content.js",
+    "images": "node scripts/images.js",
+    "build": "node scripts/validate-content.js && node scripts/build.js",
+    "serve": "npx serve dist",
+    "check": "node scripts/check-site.js",
+    "ping": "node scripts/ping-search-engines.js"
+  },
+  "engines": { "node": ">=20" },
+  "devDependencies": {
+    "sharp": "^0.34.3"
+  }
+}
