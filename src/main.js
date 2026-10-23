@@ -114,7 +114,8 @@
             if (j.photos && j.photos.length) payload.Photos = j.photos.join("  ");
             if (j.id) payload["Lead ID"] = String(j.id);
             if (data.email) payload._replyto = data.email;
-            return fetch(j.relay, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(payload) }).catch(function () {}).then(function () { return j; });
+            // Fire and forget: the lead is already stored server-side.
+            fetch(j.relay, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(payload), keepalive: true }).catch(function () {});
           }
           return j;
         }).then(function () {
