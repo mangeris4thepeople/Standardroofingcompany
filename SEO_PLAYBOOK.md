@@ -148,6 +148,8 @@ Each post: publish, add it to the Google Business Profile as a post, share on Fa
 | GSC_VERIFICATION | Google Search Console HTML tag token | to set when verifying |
 | BING_VERIFICATION | Bing Webmaster msvalidate.01 token | to set when verifying |
 | RESEND_API_KEY, LEAD_TO, LEAD_FROM | Optional: send lead emails with photo attachments through Resend instead of the FormSubmit relay | optional |
-| CONTACT_TO | FormSubmit alias override | optional |
+| CONTACT_TO | FormSubmit destination for lead emails. Currently the alias that delivers to the personal Gmail. To deliver to info@standardroofingcompany.net: click the FormSubmit activation link that arrived in the info@ inbox, then set CONTACT_TO to `info@standardroofingcompany.net` (no redeploy needed; functions read it at runtime). | action needed |
 
-Changing GA, GSC, or Bing values requires a redeploy (they are baked in at build time).
+Changing GA, GSC, or Bing values requires a redeploy (they are baked in at build time). CONTACT_TO, LEADS_DATABASE_URL, and RESEND_API_KEY are read at runtime.
+
+Lead email delivery note: the FormSubmit relay accepts posts from browsers only (server-side posts get a 403), so /api/lead stores the lead and the page completes the email from the visitor's browser. If FormSubmit is slow or down the lead is still in the database; check `SELECT * FROM leads WHERE emailed = false` weekly, or add a Resend API key for server-side delivery with photo attachments.
