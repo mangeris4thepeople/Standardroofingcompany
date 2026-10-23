@@ -109,6 +109,15 @@
       }).then(function (r) {
         return r.json().catch(function () { return {}; }).then(function (j) {
           if (!r.ok || !j.ok) throw new Error(j.error || "not delivered");
+          if (!j.emailed && j.relay) {
+            var payload = Object.assign({ _subject: j.subject || "Roof Inspection Request", _template: "table", _captcha: "false" }, j.fields || {});
+            if (j.photos && j.photos.length) payload.Photos = j.photos.join("  ");
+            if (j.id) payload["Lead ID"] = String(j.id);
+            if (data.email) payload._replyto = data.email;
+            return fetch(j.relay, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(payload) }).catch(function () {}).then(function () { return j; });
+          }
+          return j;
+        }).then(function () {
           form.reset();
           if (started) started.value = String(Date.now());
           lead("endpoint");

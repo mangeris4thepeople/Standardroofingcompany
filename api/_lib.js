@@ -74,4 +74,4 @@ async function resendEmail(subject, text, attachments, replyTo) {
   return { ok: r.ok, status: r.status };
 }
 
-module.exports = { SITE, clean, sql, photoToken, ipHash, clientIp, rateLimited, relayEmail, resendEmail, DB_URL };
+module.exports = { SITE, LEAD_INBOX_ALIAS, clean, sql, photoToken, ipHash, clientIp, rateLimited, relayEmail, resendEmail, DB_URL };
