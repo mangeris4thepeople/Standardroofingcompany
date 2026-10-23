@@ -1,0 +1,299 @@
+{
+  "404": {
+    "h1": "That page blew off in the storm",
+    "title": "Page Not Found",
+    "description": "That page is not here. Find roofing services, service areas, guides, and a free roof inspection from Standard Roofing Company in Loveland, Colorado.",
+    "keywords": [
+      "404",
+      "page not found",
+      "standard roofing company"
+    ],
+    "lede": "The address may have changed when we rebuilt the site. Use the links below or the menu to find what you need."
+  },
+  "home": {
+    "h1": "Roofing Contractor in Loveland, Colorado",
+    "title": "Roofing Contractor Loveland CO",
+    "description": "Loveland roofer for metal, slate, tile, cedar, synthetic, hail repair, and insurance claim roofing across Northern Colorado. Get a free inspection.",
+    "keywords": [
+      "roofing contractor loveland co",
+      "roofer loveland colorado",
+      "northern colorado roofing company",
+      "hail damage roof repair loveland",
+      "metal roofing northern colorado",
+      "roof replacement loveland"
+    ],
+    "lede": "Colorado is one of the most hail-battered states in the country, and the Front Range sits in the middle of it. Standard Roofing Company installs, repairs, and restores roofs the way a construction job should be run: inspected, documented, scoped in writing, built to spec, and closed out clean."
+  },
+  "services": {
+    "h1": "Roofing Services in Northern Colorado",
+    "title": "Roofing Services in Colorado",
+    "description": "Residential and commercial roofing in Northern Colorado: metal, slate, tile, cedar, synthetic, coatings, repair, and hail damage. Get a free quote.",
+    "keywords": [
+      "roofing services northern colorado",
+      "roofing company fort collins loveland",
+      "specialty roofing colorado",
+      "roof repair and replacement colorado",
+      "commercial roofing northern colorado"
+    ],
+    "lede": "Most roofers sell one product. We install the whole range and tell you which one your roof, your climate, your budget, and your insurer actually call for.",
+    "sections": [
+      {
+        "h2": "How to choose",
+        "html": "<p>Start with the problem, not the product. A leak at a chimney is a <a href=\"/services/roof-repair\">repair</a>, not a replacement. A hail storm two weeks ago is an <a href=\"/services/hail-damage-roof-repair\">inspection and documentation</a> job before it is anything else. A roof at the end of its life on a home you plan to keep for decades is where metal, slate, tile, or synthetic earn their premium. Every page below explains what the system is, why it does or does not suit Colorado, what it costs in broad terms, and what the warranty should cover, so you can compare options before anyone climbs a ladder.</p>"
+      }
+    ]
+  },
+  "service-areas": {
+    "h1": "Roofing Service Areas in Colorado",
+    "title": "Roofing Service Areas Colorado",
+    "description": "Roofing in Loveland, Fort Collins, Greeley, Windsor, Longmont, Estes Park, and mountain towns from Vail to Steamboat Springs. Request a free inspection.",
+    "keywords": [
+      "roofing service areas northern colorado",
+      "roofer near me loveland",
+      "mountain roofing contractor colorado",
+      "roofing fort collins greeley windsor",
+      "estes park roofing"
+    ],
+    "lede": "Based in Loveland and working across Larimer, Weld, and Boulder counties, with crews that build in the high country where snow load, ice dams, and wind change how a roof has to be put together.",
+    "sections": [
+      {
+        "h2": "Two very different roofing climates",
+        "html": "<p>The northern Front Range is hail country. Towns from Berthoud to Wellington see May through August storms that strip granules, bruise shingle mats, dent metal, and crack tile. Roofs here are chosen for impact resistance and wind rating, and insurance claims drive a large share of replacements.</p><p>The mountain towns are a different job. At 7,500 to 9,600 feet the enemies are snow load, ice dams, ultraviolet exposure, downslope wind, and wildfire embers. Standing seam metal dominates for good reason, Class A fire ratings are required in most of the wildland urban interface, and the build season is short. Each town page below is written for that town: the county, the elevation, the permit authority, the HOA norms, and the roof systems that hold up there.</p>"
+      }
+    ]
+  },
+  "about": {
+    "h1": "About Standard Roofing Company",
+    "title": "About Standard Roofing Company",
+    "description": "Standard Roofing Company is a licensed and insured Loveland, Colorado roofer serving Northern Colorado and the mountains. Book a free inspection.",
+    "keywords": [
+      "about standard roofing company",
+      "loveland colorado roofing company",
+      "licensed insured roofer loveland",
+      "northern colorado roofing contractor",
+      "colorado owned roofing company"
+    ],
+    "lede": "A Loveland roofing company that runs every roof like a construction project: one accountable lead, a written scope, a photo record of every stage, and a final walk before the last invoice.",
+    "sections": [
+      {
+        "h2": "Who we are",
+        "html": "<p>Standard Roofing Company is a licensed and insured roofing contractor based at 1180 E 3rd St in Loveland, Colorado. We install, repair, and restore residential and commercial roofs across Northern Colorado and the mountain towns, with a specialty focus on the systems most roofers will not touch: standing seam and other <a href=\"/services/metal-roofing\">metal roofing</a>, natural <a href=\"/services/slate-roofing\">slate</a>, concrete and clay <a href=\"/services/tile-roofing\">tile</a>, <a href=\"/services/cedar-shake-roofing\">cedar shake</a>, <a href=\"/services/synthetic-roofing\">synthetic slate and shake</a>, and <a href=\"/services/roof-coatings\">fluid-applied roof coatings</a> for low-slope commercial roofs.</p><p>We also handle the work that keeps a roof honest between replacements: leak and flashing <a href=\"/services/roof-repair\">repairs</a>, <a href=\"/services/hail-damage-roof-repair\">hail</a> and <a href=\"/services/storm-damage-roofing\">storm damage</a>, written <a href=\"/services/roof-inspections\">inspections</a>, and <a href=\"/services/insurance-claim-roofing\">insurance claim roofing</a> done inside Colorado's rules. For attorneys, public adjusters, and carriers, our <a href=\"/casualty\">casualty and litigation group</a> produces inspection reports, hail documentation, cause and origin opinions, and appraisal support.</p>"
+      },
+      {
+        "h2": "How we work",
+        "html": "<p>Every job, from a pipe boot to a 40,000 square foot membrane, runs the same five steps.</p><ol><li><strong>Inspect.</strong> A free on-roof inspection. Every slope, penetration, flashing detail, and attic condition photographed.</li><li><strong>Report.</strong> A written condition report with photos and a clear recommendation, including \"no roof needed\" when that is the truth.</li><li><strong>Scope and price.</strong> An itemized estimate: materials, quantities, tear-off, decking allowance, ventilation, flashing, permit, cleanup, and schedule. Insurance scopes reviewed line by line once you sign with us.</li><li><strong>Build.</strong> One accountable project lead on site. Property protected, crew briefed before the first shingle comes off, magnetic nail sweeps daily, inspections scheduled with the permit authority.</li><li><strong>Close out.</strong> A final walk, a photo closeout package, warranty paperwork, and a clean yard.</li></ol><p>That process is how commercial construction is managed, and it is the reason our residential customers know the price, the schedule, and the person responsible before any work starts.</p>"
+      },
+      {
+        "h2": "What we will not do",
+        "html": "<ul><li><strong>We never pay, waive, or rebate a deductible.</strong> Colorado law (C.R.S. 6-22-105) prohibits it, and a roofer who offers it is either breaking the law or hiding the cost in your scope.</li><li><strong>We do not act as your public adjuster.</strong> We document damage and, once you have signed with us, meet your adjuster on the roof to walk through what we found. The claim stays yours.</li><li><strong>We do not sell a roof you do not need.</strong> Plenty of hail inspections end with a report that says the roof is fine. That report is free, and it is yours to keep.</li><li><strong>We do not disappear after the storm season.</strong> We live and work in Larimer County. The phone number on this page is the one that answers next year.</li></ul>"
+      },
+      {
+        "h2": "Where we work",
+        "html": "<p>Our home market is the northern Front Range: <a href=\"/roofing/loveland\">Loveland</a>, <a href=\"/roofing/fort-collins\">Fort Collins</a>, <a href=\"/roofing/greeley\">Greeley</a>, <a href=\"/roofing/windsor\">Windsor</a>, <a href=\"/roofing/berthoud\">Berthoud</a>, <a href=\"/roofing/longmont\">Longmont</a>, <a href=\"/roofing/johnstown\">Johnstown</a>, <a href=\"/roofing/wellington\">Wellington</a>, <a href=\"/roofing/timnath\">Timnath</a>, and <a href=\"/roofing/estes-park\">Estes Park</a>. We also take mountain projects where the roof has to be engineered for snow load and embers: Nederland, Winter Park, Granby, Grand Lake, Steamboat Springs, Breckenridge, Frisco, Silverthorne, Vail, Red Feather Lakes, Glen Haven, and Drake. See every town on the <a href=\"/service-areas\">service areas</a> page.</p><p>Hours are Monday to Saturday, 7am to 6pm. Call or text <a href=\"tel:+19704305884\">(970) 430-5884</a>, email <a href=\"mailto:info@standardroofingcompany.net\">info@standardroofingcompany.net</a>, or <a href=\"/free-roof-inspection\">request a free inspection</a> online.</p>"
+      }
+    ]
+  },
+  "financing": {
+    "h1": "Roof Financing in Colorado",
+    "title": "Roof Financing Colorado",
+    "description": "Financing for roof replacement and repair in Northern Colorado, plus how insurance payments and deposits work. Ask about financing with your free quote.",
+    "keywords": [
+      "roof financing colorado",
+      "finance a new roof loveland",
+      "roof replacement payment plans",
+      "roof loan northern colorado",
+      "pay for roof replacement colorado"
+    ],
+    "lede": "A roof rarely fails on a convenient schedule. Here is how paying for one actually works in Colorado, whether insurance is involved or not.",
+    "sections": [
+      {
+        "h2": "Financing options",
+        "html": "<p>We offer financing on roof replacement and larger repair projects through third-party lending partners. Terms, rates, and approval depend on the lender and your credit, and most programs allow a soft pre-qualification check that does not affect your score. Typical structures include fixed-term installment loans and promotional periods with deferred interest. We will walk you through the options with your written estimate so you can compare the monthly payment against the cost of waiting, which with an active leak or a hail-bruised roof is rarely zero.</p><p>Financing is also useful when an insurance claim covers most of a replacement but not the upgrade you want. Many homeowners finance the difference between an asphalt scope and a <a href=\"/services/standing-seam-metal-roofing\">standing seam metal</a> or <a href=\"/services/synthetic-roofing\">synthetic</a> roof, or the cost of Class 4 shingles that earn an insurance discount every year afterward.</p>"
+      },
+      {
+        "h2": "How payment works on a roofing contract",
+        "html": "<p>Colorado's roofing contractor law (C.R.S. 6-22-101 and following) requires a written contract for residential roofing work and gives you the right to cancel within 72 hours of signing. Our contracts spell out the scope, the price, the start and completion windows, and the payment schedule before any work starts. A typical structure is a deposit when materials are ordered, a progress payment when the roof is dried in, and the balance after the final walk and the permit inspection passes. Nothing is due for work that has not been done.</p>"
+      },
+      {
+        "h2": "When insurance is paying",
+        "html": "<p>On an approved hail or wind claim, your carrier usually issues the actual cash value first and holds back recoverable depreciation until the work is complete. You pay your deductible, we complete the roof, we send the carrier the completion documentation, and the carrier releases the depreciation. We never pay, waive, or rebate a deductible, because Colorado law prohibits it. Read more in <a href=\"/services/insurance-claim-roofing\">insurance claim roofing</a> and in our guide to <a href=\"/blog/does-homeowners-insurance-cover-roof-replacement-colorado\">what homeowners insurance covers</a>.</p>"
+      },
+      {
+        "h2": "Commercial and HOA projects",
+        "html": "<p>Property managers and HOA boards usually need a phased scope, a payment schedule tied to milestones, certificates of insurance naming the association, and lien waivers with each payment. We provide all of it as a standard part of <a href=\"/services/commercial-roofing\">commercial roofing</a> work. For multi-building communities, phasing the roofs over two or three seasons often fits reserves better than a single assessment.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can I finance a roof repair, not just a replacement?",
+        "a": "Yes, larger repair projects can be financed through the same lending partners. Small repairs are usually simpler to pay directly, and we will tell you when financing does not make sense for the amount involved."
+      },
+      {
+        "q": "Does checking my financing options affect my credit score?",
+        "a": "Most of our lending partners offer a soft pre-qualification that does not affect your credit score. A hard inquiry only happens if you choose to proceed with an application after seeing the terms."
+      },
+      {
+        "q": "Do you require a large deposit?",
+        "a": "Deposits are tied to ordering materials and are spelled out in the written contract before you sign. The balance is due after the final walk and the permit inspection, never for work that has not been completed."
+      },
+      {
+        "q": "Can financing cover the gap between my insurance payout and a metal roof?",
+        "a": "Yes. Many homeowners use financing for the upgrade difference between the asphalt scope a carrier approves and the metal, tile, or synthetic roof they want. The claim pays its share and the loan covers the rest."
+      }
+    ]
+  },
+  "warranty": {
+    "h1": "Roofing Warranty: What Is Covered",
+    "title": "Roofing Warranty Explained",
+    "description": "How roofing warranties work in Colorado: manufacturer and workmanship coverage, what hail does not void, and what to get in writing. Ask for your terms.",
+    "keywords": [
+      "roofing warranty colorado",
+      "roof workmanship warranty",
+      "manufacturer roof warranty explained",
+      "does hail void roof warranty",
+      "roof warranty transfer"
+    ],
+    "lede": "Two warranties cover every roof we install, and they cover different things. Here is what each one does, what it does not do, and what to ask for before you sign with any roofer.",
+    "sections": [
+      {
+        "h2": "Manufacturer warranties cover the product",
+        "html": "<p>A shingle, panel, tile, or membrane manufacturer warrants the material against defects: cracking, granule loss beyond normal weathering, delamination, coating failure. Terms run from 25 years to limited lifetime on asphalt, 30 to 50 years on quality metal finishes (PVDF or Kynar paint systems carry their own chalk and fade terms), 50 years on many concrete tiles and synthetics, and 10 to 20 years on roof coatings depending on the system and mil thickness. Most manufacturer warranties are prorated after an initial period, cover materials but not labor unless an enhanced warranty is purchased, and require the product to be installed to the manufacturer's published specifications by a contractor following their requirements. That last clause is why installation quality matters to your warranty, not just to your roof.</p>"
+      },
+      {
+        "h2": "Workmanship warranties cover the installation",
+        "html": "<p>Our workmanship warranty covers how the roof was put on: flashing, fastening, underlayment, ventilation, penetrations, valleys, and the details that cause most leaks. If a roof we installed leaks because of how it was built, we fix it. The term and the exact coverage are written into your contract before work starts, and you receive the warranty document in your closeout package. Ask any roofer to show you the workmanship warranty in writing before you sign; a verbal promise is not a warranty.</p>"
+      },
+      {
+        "h2": "What a warranty does not cover",
+        "html": "<ul><li><strong>Storm damage.</strong> Hail, wind, falling trees, and ice dams are insurance events, not warranty events. The exception is impact-rated products whose Class 4 rating is part of their warranty language; read it closely, because cosmetic denting on metal is excluded by most manufacturers.</li><li><strong>Neglect.</strong> Clogged gutters, unmaintained sealant, foot traffic damage, and unauthorized repairs or additions (satellite dishes, solar racking installed through the roof by others) can void coverage.</li><li><strong>Pre-existing conditions.</strong> Decking, structure, and ventilation problems that were not part of the scope. We flag these during inspection and price them as options so there is no argument later.</li></ul>"
+      },
+      {
+        "h2": "What to get in writing",
+        "html": "<ol><li>The manufacturer, product line, and warranty tier being installed, with the registration completed in your name.</li><li>The workmanship warranty term, what it covers, and how to make a claim.</li><li>Whether the warranty transfers to a new owner, and any transfer fee or deadline. Transferable warranties matter when you sell; see <a href=\"/blog/signs-you-need-a-roof-inspection-before-selling-your-home\">roof inspections before selling</a>.</li><li>The maintenance expectations that keep coverage in force, such as annual <a href=\"/services/roof-inspections\">inspections</a> on tile, slate, and low-slope roofs.</li></ol><p>Questions about an existing warranty on a roof we did not install? A written inspection report documents the current condition and whether an installation defect, a storm, or normal wear is behind the problem.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does hail damage void my roof warranty?",
+        "a": "No. Hail is a storm event covered by your homeowners insurance, not a defect covered by a warranty. Repairs done properly after a storm keep the manufacturer and workmanship warranties in force; repairs done by an unqualified contractor can void them."
+      },
+      {
+        "q": "Is the workmanship warranty transferable if I sell my home?",
+        "a": "The transfer terms are stated in your contract and warranty document. Many manufacturer warranties allow one transfer within a set window, sometimes with a fee. Keep the closeout package; buyers and their inspectors will ask for it."
+      },
+      {
+        "q": "What is an enhanced or system warranty?",
+        "a": "Manufacturers offer upgraded warranties when their full system (underlayment, starter, ridge, ventilation) is installed by a contractor in their program. These often add labor coverage and longer non-prorated periods for an additional cost. We will tell you when one is worth it."
+      },
+      {
+        "q": "How do I make a warranty claim?",
+        "a": "Call or email us with your address and a description of the problem. We inspect, document the cause with photos, and either repair it under the workmanship warranty, file the manufacturer claim on your behalf, or explain why it is an insurance matter instead."
+      }
+    ]
+  },
+  "gallery": {
+    "h1": "Roofing Systems Gallery",
+    "title": "Roofing Gallery, Colorado",
+    "description": "See the roofing systems we install across Northern Colorado: standing seam metal, slate, tile, cedar shake, synthetic, and coatings. Get a free inspection.",
+    "keywords": [
+      "roofing gallery colorado",
+      "metal roof photos colorado",
+      "slate tile cedar roof examples",
+      "standing seam metal roof gallery",
+      "roofing systems northern colorado"
+    ],
+    "lede": "Every system we install, with the Colorado conditions it is built for. Project photos are added to this gallery as jobs close out; the illustrations below show each system's profile and where it fits.",
+    "sections": []
+  },
+  "reviews": {
+    "h1": "Standard Roofing Company Reviews",
+    "title": "Reviews, Standard Roofing Company",
+    "description": "Read reviews of Standard Roofing Company, a Loveland, Colorado roofer, and see how we earn them: written scopes and photo reports. Book a free inspection.",
+    "keywords": [
+      "standard roofing company reviews",
+      "loveland roofer reviews",
+      "best roofing company loveland co",
+      "northern colorado roofing reviews",
+      "roofing contractor ratings colorado"
+    ],
+    "lede": "We earn reviews one roof at a time, and we ask for them the same way we build: after the final walk, when the yard is clean and the warranty paperwork is in your hands.",
+    "sections": [
+      {
+        "h2": "Where to find and leave reviews",
+        "html": "<p>Reviews of our work are collected on our Google Business Profile, where they are tied to a verified business and cannot be edited by us. When your project closes out, your project lead will send a direct link. If something went wrong on a job, we want to hear it directly first so we can fix it, but we never ask anyone to change or remove an honest review.</p>"
+      },
+      {
+        "h2": "What customers can expect, in writing",
+        "html": "<ul><li>A free, photo-documented inspection and a written condition report, even when the answer is \"no work needed.\"</li><li>An itemized estimate with materials, quantities, schedule, and payment terms spelled out before signing.</li><li>One accountable project lead from the first call through the final walk.</li><li>Daily cleanup and magnetic nail sweeps, property protection, and a closeout photo package.</li><li>A written workmanship warranty plus the manufacturer warranty registered in your name. See <a href=\"/warranty\">how roofing warranties work</a>.</li><li>No deductible games, ever. Colorado law prohibits it and so do we.</li></ul><p>Ready to see it for yourself? <a href=\"/free-roof-inspection\">Request a free inspection</a> or read about <a href=\"/about\">how we work</a>.</p>"
+      }
+    ]
+  },
+  "contact": {
+    "h1": "Contact Standard Roofing Company",
+    "title": "Contact Us, Loveland Roofer",
+    "description": "Contact Standard Roofing Company, 1180 E 3rd St, Loveland, CO 80537. Call or text (970) 430-5884 or email us to book a free roof inspection.",
+    "keywords": [
+      "contact standard roofing company",
+      "roofer loveland phone number",
+      "roofing company near me loveland",
+      "1180 e 3rd st loveland",
+      "free roof inspection loveland"
+    ],
+    "lede": "Call, text, email, or send the form. Post-storm inspections are scheduled within a few days across Northern Colorado; mountain projects are scheduled by season.",
+    "sections": []
+  },
+  "free-roof-inspection": {
+    "h1": "Free Roof Inspection in Northern Colorado",
+    "title": "Free Roof Inspection Colorado",
+    "description": "Book a free, photo-documented roof inspection in Loveland, Fort Collins, Greeley, Windsor, Longmont, Estes Park, and the mountains. Request yours today.",
+    "keywords": [
+      "free roof inspection colorado",
+      "free roof inspection loveland",
+      "free hail damage inspection fort collins",
+      "roof inspection near me",
+      "free roof estimate northern colorado"
+    ],
+    "lede": "A real inspection, not a sales call. We walk the roof, photograph every slope and detail, check the attic when we can, and send you a written report you can act on, whether that means a repair, a claim, a replacement, or nothing at all.",
+    "sections": [
+      {
+        "h2": "What the free inspection includes",
+        "html": "<ul><li><strong>On-roof walk</strong> of every slope, with drone imaging when a roof is too steep or fragile to walk safely.</li><li><strong>Photo documentation</strong> of hail bruising, granule loss, wind lift, cracked tile or slate, split shakes, flashing, pipe boots, valleys, skylights, and gutters.</li><li><strong>Attic check</strong> for ventilation, moisture staining, and daylight, when there is access.</li><li><strong>Written condition report</strong> with photos, a plain-language explanation, and a recommendation: repair, monitor, replace, or file a claim.</li><li><strong>Itemized estimate</strong> if work is recommended, with materials, quantities, schedule, and warranty terms in writing.</li></ul>"
+      },
+      {
+        "h2": "What happens next",
+        "html": "<p>Within one business day of your request we call to schedule. Most Northern Colorado inspections happen within a few days; after a major hail storm the queue runs longer, so request early. You get the report within a day or two of the visit. There is no obligation, no pressure, and no deposit to see the report. If the roof is fine, the report says so and we part ways until the next storm.</p><p>If you have an active leak, say so in the form or call <a href=\"tel:+19704305884\">(970) 430-5884</a>; we prioritize emergency tarping and dry-in ahead of routine inspections. See <a href=\"/services/storm-damage-roofing\">storm damage roofing</a> for what to do in the first 24 hours.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is the inspection really free, with no strings attached?",
+        "a": "Yes. The inspection and the written report are free, and you are under no obligation to hire us, file a claim, or do anything with the report. We earn the work by being right about the roof, not by charging to look at it."
+      },
+      {
+        "q": "Do you inspect roofs for insurance claims?",
+        "a": "Yes. Post-storm inspections document hail and wind damage with photos you can hand to your insurer. Once you sign with us for the repair or replacement, we can meet your adjuster on the roof. We never act as your public adjuster and never waive deductibles."
+      },
+      {
+        "q": "Do you inspect commercial and HOA roofs?",
+        "a": "Yes. Low-slope commercial, multifamily, and HOA roofs get the same photo-documented inspection, plus a maintenance recommendation. Property managers receive a written report they can share with boards and insurers."
+      },
+      {
+        "q": "How far do you travel for a free inspection?",
+        "a": "Free inspections cover our Northern Colorado service area from Berthoud and Longmont to Wellington, Greeley, and Estes Park. Mountain towns are scheduled as project visits by season; call to discuss timing."
+      }
+    ]
+  },
+  "blog": {
+    "h1": "Colorado Roofing Guides and Advice",
+    "title": "Colorado Roofing Blog and Guides",
+    "description": "Plain-language Colorado roofing guides: hail damage, insurance claims, metal vs asphalt, wildfire-rated materials, and reading an estimate. Start reading.",
+    "keywords": [
+      "colorado roofing blog",
+      "roofing guides colorado homeowners",
+      "hail damage roof guide",
+      "roofing insurance claim guide colorado",
+      "mountain roofing advice"
+    ],
+    "lede": "The questions Colorado homeowners and property managers actually search, answered by people who build roofs here. No filler."
+  }
+}

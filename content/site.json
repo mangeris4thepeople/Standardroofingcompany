@@ -1,0 +1,46 @@
+{
+  "name": "Standard Roofing Company",
+  "legalName": "Standard Roofing Company",
+  "domain": "standardroofingcompany.net",
+  "url": "https://standardroofingcompany.net",
+  "email": "info@standardroofingcompany.net",
+  "phone": "(970) 430-5884",
+  "phoneE164": "+19704305884",
+  "phoneNote": "Change phone and phoneE164 here to update every call button, tel: link, and schema on the site in one place.",
+  "address": {
+    "street": "1180 E 3rd St",
+    "city": "Loveland",
+    "state": "CO",
+    "zip": "80537",
+    "country": "US"
+  },
+  "geo": { "lat": 40.3936, "lng": -105.0618 },
+  "hours": [
+    { "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "07:00", "closes": "18:00" }
+  ],
+  "hoursDisplay": "Monday to Saturday, 7am to 6pm",
+  "priceRange": "$$",
+  "sameAs": [],
+  "sameAsNote": "Add the Google Business Profile share URL, Facebook, Instagram, and LinkedIn URLs here once they exist.",
+  "titleSuffix": " | Standard Roofing Company",
+  "defaultOgImage": "/images/og-image.png",
+  "trust": [
+    { "title": "Licensed and Insured", "text": "Liability and workers' comp on every crew" },
+    { "title": "Colorado Owned", "text": "Based in Loveland, working across the Front Range and the mountains" },
+    { "title": "Specialty Materials", "text": "Metal, slate, tile, cedar, synthetic, and coatings" },
+    { "title": "Free Inspections", "text": "Photo-documented, written report, no obligation" }
+  ],
+  "serviceAreas": {
+    "northernColorado": ["Loveland", "Fort Collins", "Greeley", "Windsor", "Berthoud", "Longmont", "Johnstown", "Wellington", "Timnath", "Estes Park"],
+    "mountain": ["Estes Park", "Nederland", "Winter Park", "Granby", "Grand Lake", "Steamboat Springs", "Breckenridge", "Frisco", "Silverthorne", "Vail", "Red Feather Lakes", "Glen Haven", "Drake"]
+  },
+  "nav": [
+    { "label": "Services", "href": "/services" },
+    { "label": "Areas", "href": "/service-areas" },
+    { "label": "Storm & Hail", "href": "/services/hail-damage-roof-repair" },
+    { "label": "Attorneys", "href": "/casualty" },
+    { "label": "Blog", "href": "/blog" },
+    { "label": "About", "href": "/about" },
+    { "label": "Contact", "href": "/contact" }
+  ]
+}
