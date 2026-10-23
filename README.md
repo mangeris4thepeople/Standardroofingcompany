@@ -1,53 +1,59 @@
 # Standard Roofing Company
 
-Website for Standard Roofing Company, Loveland, Colorado.
+Website for Standard Roofing Company, Loveland, Colorado. Live at https://standardroofingcompany.net on Vercel (CYRcom team).
 
-Plain static site: HTML, CSS, and one JS file. No build step, no dependencies.
+Static site generated from JSON content. No framework; Node 20, one dev dependency (sharp, for images).
 
-## Pages
+## Layout
 
-| File | Page |
+| Path | What |
 | --- | --- |
-| `index.html` | Home |
-| `services.html` | Replacement, repair, commercial, inspections, gutters |
-| `storm-damage.html` | Hail and storm damage, insurance help, Colorado roofing law, FAQ |
-| `casualty.html` | Casualty and litigation services for attorneys, with attorney intake form |
-| `roofing-expert-witness-colorado.html`, `hail-damage-cause-of-loss-inspection.html`, `roofing-construction-defect-review.html`, `roofing-fall-protection-standard-of-care.html`, `roof-repair-cost-estimates-insurance-appraisal.html` | Litigation landing pages (expert witness hub, hail cause of loss, construction defect, fall protection standard of care, cost estimates and appraisal), each with Service and FAQ schema; the CTA links to the intake form at `casualty.html#intake` |
-| `about.html` | Company story and credentials |
-| `contact.html` | Free inspection request form |
-| `404.html` | Not found page |
-| `specialty-roofing.html` | Specialty roofing hub with comparison table |
-| `metal-roofing.html`, `slate-roofing.html`, `tile-roofing.html`, `cedar-shake-roofing.html`, `synthetic-roofing.html`, `roof-coatings.html` | Specialty system pages, each with FAQ schema |
-| `service-areas.html` | Service area hub |
-| `roofing-<city>-co.html` | City pages: Loveland, Fort Collins, Windsor, Greeley, Longmont, Estes Park, Berthoud, Johnstown, Timnath, Wellington |
-| `mountain-roofing.html` | Vail, Avon, Aspen, Steamboat, Winter Park, Copper Mountain |
+| `content/*.json` | All copy. `site.json` holds business facts (phone, address, hours, nav). `services.json` (14), `cities.json` (22), `casualty.json` (landing + 7), `blog.json` (12), `pages.json` (home, hubs, about, financing, warranty, gallery, reviews, contact, free inspection, 404). Rules in `content/README.md`. |
+| `scripts/build.js` | Generates `dist/`: clean routes, metadata, JSON-LD, sitemap.xml, robots.txt, feed.xml, llms.txt, 404.html. |
+| `scripts/lib/` | `content.js` (loader), `html.js` (components, layout, schema builders). |
+| `scripts/images.js` | Draws every illustration, OG card, and the logo from SVG and writes WebP/PNG to `public/images/`. Outputs are committed; rerun only after changing art or adding pages. |
+| `scripts/validate-content.js` | Enforces the content rules (lengths, word counts, banned text, tags, links). Runs before every build. |
+| `scripts/check-site.js` | Crawls `dist/`: broken links, unique titles and descriptions, one H1, alt text, schema validity, sitemap coverage. |
+| `scripts/ping-search-engines.js` | IndexNow and Bing sitemap ping; run by `.github/workflows/post-deploy.yml` after each production deploy. |
+| `src/styles.css`, `src/main.js`, `src/analytics.js`, `src/fonts/`, `src/partials/` | Styles (inlined at build), site script, GA4 script, self-hosted Barlow WOFF2, home hero SVG. |
+| `public/` | Static files copied to `dist/` as-is (favicons, IndexNow key file, verification files, images). |
+| `api/` | Vercel functions: `lead.js` (form handler, stores to Neon and emails), `photo.js` (serves stored lead photos), `indexnow.js`, `health.js`, `contact.js` (legacy alias). |
+| `vercel.json` | Build command, clean URLs, 301s from the old `.html` URLs, cache and security headers. |
+| `SEO_AUDIT.md`, `SEO_PLAYBOOK.md` | Before/after audit and the off-site checklist (Google Business Profile, citations, content calendar). |
 
-## SEO
+## Commands
 
-- Every page carries a JSON-LD `@graph`: RoofingContractor organization, WebSite, WebPage, BreadcrumbList, and Service or FAQPage where they apply.
-- `og-image.png` (1200x630) is the share image; the SVG is kept for reference only.
-- `sitemap.xml` lists all indexable pages with `lastmod`. `llms.txt` summarizes the site for AI crawlers.
-- The specialty and city pages are generated from a content file. To change copy across many pages at once, edit the generator rather than each HTML file by hand.
+```
+npm install          # once
+npm run build        # validate content, then build dist/
+npm run check        # crawl dist/ for broken links, duplicates, schema problems
+npm run serve        # preview dist/ locally
+npm run images       # regenerate public/images (only after art or page changes)
+```
 
-## Deploy
+Vercel runs `npm run build` and serves `dist/`.
 
-**Vercel:** the repo is connected; every push to `main` deploys to standardroofingcompany.net. Framework preset "Other", no build command, output directory `/`.
+## Editing copy
 
-## Settings to change
+Edit the JSON in `content/`, run `npm run build`, commit, push to `main`. Never edit `dist/`.
+Rules worth repeating: no em dashes anywhere, no people or other companies, titles 33 characters or fewer (the suffix is added), descriptions 120 to 155 characters with a call to action. The validator will tell you exactly what to fix.
 
-In `main.js`, the `CONFIG` block at the top:
+Adding a blog post: append an object to `content/blog.json` (copy the shape of an existing one), run `npm run images` so it gets an OG card, build, push. It appears in the blog index, the home page, the sitemap, feed.xml, and llms.txt automatically.
 
-- `FORM_ENDPOINT`: `/api/contact`, a Vercel function (`api/contact.js`) that emails each form request to the lead inbox. The inbox address lives only in that function (or the `CONTACT_TO` environment variable) and never appears in the public site. FormSubmit sends a one-time activation email to that inbox on the first submission; click it once or requests will not be delivered.
-- `LEAD_EMAIL`: left empty, so if the relay fails the visitor's text app opens with the request filled in. The public business email, info@standardroofingcompany.net (Namecheap Private Email), is listed on the contact page, the casualty page, every footer, and in the JSON-LD `email` field.
+Adding a city or service: append to `cities.json` or `services.json` with the same fields, run `npm run images`, build. The validator expects the full lists; extend the `expected` arrays in `scripts/validate-content.js` if you add beyond them.
 
-## Search engines
+Changing the phone number: `content/site.json` (`phone` and `phoneE164`), rebuild. Every call button, tel: link, form fallback, and schema updates.
 
-- After publishing pages, open `/api/indexnow?key=<the IndexNow key from the .txt file in the site root>` (or send a POST). It submits every sitemap URL to IndexNow (Bing and partners) and shows the status code; 200 or 202 means accepted.
+## Leads
 
-Domain: canonical URLs, `sitemap.xml`, and `robots.txt` assume `https://standardroofingcompany.net`. Find and replace if the domain is different.
+Forms post JSON to `/api/lead`. The function rejects bots (honeypot, timing, rate limit), inserts the lead into the `leads` table (and photos into `lead_photos`) in the Neon database named `srcleads`, then emails `info@standardroofingcompany.net` with the fields and private photo links. If the database is unreachable the email still goes out; if email fails the lead is still stored. `/api/health` reports which integrations are configured.
 
-Analytics: every page loads `analytics.js`. Set `GA_ID` at the top of that file to the GA4 measurement ID (starts with G-) and the whole site starts reporting page views plus `phone_click`, `text_click`, and `generate_lead` events. Left empty, it does nothing.
+Query recent leads: `SELECT received_at, form_kind, name, phone, email, city, issue, page, emailed FROM leads ORDER BY received_at DESC LIMIT 50;`
+
+## Environment variables
+
+See the table at the end of `SEO_PLAYBOOK.md`. `LEADS_DATABASE_URL` and `INDEXNOW_KEY` are set. `GA_MEASUREMENT_ID`, `GSC_VERIFICATION`, and `BING_VERIFICATION` are read at build time; set them in the Vercel project and redeploy.
 
 ## Brand
 
-Storm theme: near-black forest green (`#050806` to `#121e17`), burnished brass `#a8844e`, bone text `#d6cfbf`, Barlow Condensed headings. The home hero is an animated supercell (lightning flash, falling hail, drifting clouds); all motion stops for visitors with reduced-motion turned on.
+Storm theme: near-black forest green, burnished brass `#a8844e`, bone text, Barlow Condensed headings. The home hero is an animated supercell; all motion stops for visitors with reduced-motion on.
