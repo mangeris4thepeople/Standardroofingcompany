@@ -67,6 +67,7 @@ module.exports = async (req, res) => {
   const subject = (kind === 'attorney' ? 'Casualty / Litigation Matter | ' : 'Roof Inspection Request | ') + name + (leadId ? ` (#${leadId})` : '');
   const text = Object.entries(fields).map(([k, v]) => `${k}: ${v}`).join('\n') + (photoLinks.length ? '\n\nPhotos:\n' + photoLinks.join('\n') : photos.length ? `\n\n${photos.length} photo(s) attached` : '');
   let emailed = false;
+  let emailError = '';
   try {
     const viaResend = await resendEmail(subject, text + `\n\nSource: ${SITE}`, photos.map((p, i) => ({ name: clean(p.name, 120) || `photo-${i + 1}.jpg`, data: p.data })), replyTo);
     if (viaResend.ok) emailed = true;
@@ -77,13 +78,14 @@ module.exports = async (req, res) => {
       if (leadId) extra['Lead ID'] = String(leadId);
       const out = await relayEmail(subject, extra, replyTo);
       emailed = out.ok;
-      if (!out.ok) console.error('Relay failed', out.status, JSON.stringify(out.data).slice(0, 300));
+      if (!out.ok) { emailError = 'relay ' + out.status + ' ' + JSON.stringify(out.data).slice(0, 200); console.error('Relay failed', emailError); }
     }
   } catch (err) {
-    console.error('Email error', err && err.message);
+    emailError = 'exception ' + String(err && err.message).slice(0, 200);
+    console.error('Email error', emailError);
   }
   if (leadId && emailed) { try { await sql('UPDATE leads SET emailed=true WHERE id=$1', [leadId]); } catch (e) {} }
 
   if (!emailed && !leadId) return res.status(502).json({ ok: false, error: 'We could not send that just now. Please call or text ' + PHONE + '.' });
-  return res.status(200).json({ ok: true, id: leadId, emailed });
+  return res.status(200).json({ ok: true, id: leadId, emailed, emailError: emailError || undefined });
 };
