@@ -25,16 +25,14 @@ const ICON = {
 };
 
 function fontCss() {
-  const f = (family, weight, file) => `@font-face{font-family:"${family}";font-style:normal;font-weight:${weight};font-display:swap;src:url(/fonts/${file}) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}`;
-  return [
-    f('Barlow', 400, 'barlow-latin-400-normal.woff2'),
-    f('Barlow', 500, 'barlow-latin-500-normal.woff2'),
-    f('Barlow', 600, 'barlow-latin-600-normal.woff2'),
-    f('Barlow Condensed', 600, 'barlow-condensed-latin-600-normal.woff2'),
-    f('Barlow Condensed', 700, 'barlow-condensed-latin-700-normal.woff2'),
-    f('Barlow Condensed', 800, 'barlow-condensed-latin-800-normal.woff2'),
-    f('Barlow Condensed', 900, 'barlow-condensed-latin-900-normal.woff2'),
-  ].join('');
+  // One variable file covers every weight (100-900) and width (62%-125%).
+  return '@font-face{font-family:"Archivo";font-style:normal;font-weight:100 900;font-stretch:62% 125%;font-display:swap;src:url(/fonts/archivo-latin-wdth-normal.woff2) format("woff2-variations"),url(/fonts/archivo-latin-wdth-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}';
+}
+
+// Brand lockup: copper roof peak mark plus the wordmark.
+const MARK = '<svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="10" fill="#1d2228"/><path d="M11 33 L32 13 L53 33" fill="none" stroke="#c4672f" stroke-width="7" stroke-linecap="square"/><path d="M17 40 H47" stroke="#e7e0d4" stroke-width="5"/><path d="M17 50 H47" stroke="#e7e0d4" stroke-width="5" opacity=".6"/></svg>';
+function lockup(tag = 'span') {
+  return `<${tag} class="wordmark" aria-hidden="true">${MARK}<span class="wm-text"><span class="wm-top">Standard</span><span class="wm-bot">Roofing Co.</span></span></${tag}>`;
 }
 
 function minifyCss(css) {
@@ -59,11 +57,11 @@ function img(src, alt, opts = {}) {
 function header(site, current) {
   const links = site.nav.map((n) => `<a href="${n.href}"${current === n.href ? ' aria-current="page"' : ''}>${esc(n.label)}</a>`).join('');
   return `<a class="skip" href="#main">Skip to content</a>
-<div class="topbar"><div class="wrap"><span class="tb-left">Northern Colorado and mountain roofing | Licensed and insured</span><a href="tel:${site.phoneE164}" data-cta="call">${ICON.phone}Call or text ${esc(site.phone)}</a></div></div>
+<div class="topbar"><div class="wrap"><span class="tb-left"><i class="dot"></i>Northern Colorado and mountain roofing | Licensed and insured | Free inspections</span><a href="tel:${site.phoneE164}" data-cta="call">${ICON.phone}Call or text ${esc(site.phone)}</a></div></div>
 <header class="site-header"><div class="wrap">
-<a class="brand" href="/" aria-label="Standard Roofing Company home"><span class="wordmark" aria-hidden="true"><span class="wm-top">Standard</span><span class="wm-rule"></span><span class="wm-bot">Roofing</span></span></a>
+<a class="brand" href="/" aria-label="Standard Roofing Company home">${lockup()}</a>
 <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">${ICON.menu}</button>
-<nav class="nav" id="nav" aria-label="Main"><a href="/"${current === '/' ? ' aria-current="page"' : ''}>Home</a>${links}<a class="btn btn-brass" href="/free-roof-inspection" data-cta="nav">Free Inspection</a></nav>
+<nav class="nav" id="nav" aria-label="Main"><a href="/"${current === '/' ? ' aria-current="page"' : ''}>Home</a>${links}<a class="btn btn-copper" href="/free-roof-inspection" data-cta="nav">Free Inspection</a></nav>
 </div></header>`;
 }
 
@@ -75,7 +73,7 @@ function footer(site, model) {
   const a = site.address;
   return `<footer class="site-footer"><div class="wrap">
 <div class="foot-grid">
-<div><p class="wordmark" aria-hidden="true"><span class="wm-top">Standard</span><span class="wm-rule"></span><span class="wm-bot">Roofing</span></p>
+<div>${lockup('p')}
 <p class="foot-about">Residential, commercial, and specialty roofing from Loveland, Colorado. Metal, slate, tile, cedar, synthetic, coatings, hail and storm repair, and insurance claim roofing across Northern Colorado and the mountains.</p>
 <address class="foot-nap"><strong>${esc(site.name)}</strong><br>${esc(a.street)}<br>${esc(a.city)}, ${esc(a.state)} ${esc(a.zip)}<br><a href="tel:${site.phoneE164}">${esc(site.phone)}</a><br><a href="mailto:${site.email}">${esc(site.email)}</a><br>${esc(site.hoursDisplay)}</address></div>
 <div><h2 class="foot-h">Services</h2><ul>${svc}<li><a href="/services">All services</a></li></ul></div>
@@ -138,21 +136,21 @@ function quoteForm(site, opts = {}) {
 </div>
 <div class="hp" aria-hidden="true"><label for="${id}-cw">Company website</label><input id="${id}-cw" name="company_website" type="text" tabindex="-1" autocomplete="off"></div>
 <input type="hidden" name="started" value=""><input type="hidden" name="form_kind" value="${kind}">${cityOpt}${svcOpt}
-<button class="btn btn-brass" type="submit">${ICON.clipboard}Request my free inspection</button>
+<button class="btn btn-copper" type="submit">${ICON.clipboard}Request my free inspection</button>
 <p class="form-status" role="status" aria-live="polite"></p>
 <p class="form-note">No obligation. We never pay, waive, or rebate deductibles, as Colorado law requires.</p>
 </form></div></section>`;
 }
 
 function ctaBand(site, h2, p) {
-  return `<section class="cta-band"><svg class="bg" viewBox="0 0 620 220" aria-hidden="true"><path d="M0 220 L310 30 L620 220" fill="none" stroke="#d4b87a" stroke-width="14"/></svg><div class="wrap">
+  return `<section class="cta-band"><svg class="bg" viewBox="0 0 620 260" aria-hidden="true"><path d="M20 250 L310 40 L600 250" fill="none" stroke="#c4672f" stroke-width="18"/><path d="M120 250 L310 112 L500 250" fill="none" stroke="#ffffff" stroke-width="6" opacity=".35"/></svg><div class="wrap">
 <div><h2>${esc(h2 || 'The next storm is already forming.')}</h2><p>${esc(p || 'Find out what the last one did to your roof before the next one does worse. Free inspection, photos of everything we find.')}</p></div>
-<div class="ctas"><a class="btn btn-brass" href="/free-roof-inspection" data-cta="band">Book a free inspection</a><a class="btn btn-ghost" href="tel:${site.phoneE164}" data-cta="band-call">${ICON.phone}${esc(site.phone)}</a></div>
+<div class="ctas"><a class="btn btn-copper" href="/free-roof-inspection" data-cta="band">Book a free inspection</a><a class="btn btn-ghost" href="tel:${site.phoneE164}" data-cta="band-call">${ICON.phone}${esc(site.phone)}</a></div>
 </div></section>`;
 }
 
 function cardGrid(items, cls = 'g3') {
-  return `<div class="grid ${cls}">${items.map((it) => `<article class="card reveal">${it.img || ''}<h3><a href="${it.href}">${esc(it.title)}</a></h3><p>${esc(it.text)}</p><a class="more" href="${it.href}">${esc(it.cta || ('About ' + it.title))}</a></article>`).join('')}</div>`;
+  return `<div class="grid ${cls}">${items.map((it) => `<article class="card reveal${it.img ? ' has-img' : ''}">${it.img ? `<div class="card-img">${it.img}</div>` : ''}<div class="card-body"><h3><a href="${it.href}">${esc(it.title)}</a></h3><p>${esc(it.text)}</p><a class="more" href="${it.href}">${esc(it.cta || ('About ' + it.title))}</a></div></article>`).join('')}</div>`;
 }
 
 function relatedLinks(items, heading) {
@@ -239,13 +237,13 @@ ${robots}
 <meta name="twitter:title" content="${esc(fullTitle)}">
 <meta name="twitter:description" content="${esc(page.description)}">
 <meta name="twitter:image" content="${og}">
-${verify}<meta name="theme-color" content="#050806">
+${verify}<meta name="theme-color" content="#14171b">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="alternate" type="application/rss+xml" title="${esc(site.name)} blog" href="/feed.xml">
-<link rel="preload" as="font" type="font/woff2" href="/fonts/barlow-condensed-latin-800-normal.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="/fonts/barlow-latin-400-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/archivo-latin-wdth-normal.woff2" crossorigin>
 ${preload}<style>${css}</style>
 ${jsonLd(page.graph)}
 </head>
