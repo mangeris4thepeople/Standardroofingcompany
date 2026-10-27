@@ -100,6 +100,13 @@ for (const [route, html] of routes) {
   if (route !== '/' && !is404 && !/"BreadcrumbList"/.test(html)) bad(route, 'nested page without BreadcrumbList');
 }
 for (const s of inSitemap) if (!routes.has(s)) bad(s, 'in sitemap but no page');
+// vercel.json: no redirect may point at itself, and no indexable page may be a redirect source
+const vj = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'vercel.json'), 'utf8'));
+for (const r of vj.redirects || []) {
+  const src = r.source.replace(/\/$/, '') || '/', dst = r.destination.replace(/\/$/, '') || '/';
+  if (src === dst) bad(src, 'redirect points at itself (loop)');
+  if (routes.has(src) && !src.includes(':')) bad(src, 'live page is also a redirect source');
+}
 
 console.log(`\nPages: ${routes.size} (${inSitemap.size} in sitemap). Schema types:`, types);
 console.log(problems ? `${problems} problem(s)` : 'Site check passed: zero broken links, unique titles and descriptions, valid structured data.');
