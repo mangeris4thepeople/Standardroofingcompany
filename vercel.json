@@ -112,11 +112,6 @@
       "permanent": true
     },
     {
-      "source": "/services",
-      "destination": "/services",
-      "permanent": true
-    },
-    {
       "source": "/specialty-roofing",
       "destination": "/services",
       "permanent": true
@@ -157,11 +152,6 @@
       "permanent": true
     },
     {
-      "source": "/service-areas",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
       "source": "/mountain-roofing",
       "destination": "/service-areas",
       "permanent": true
@@ -169,11 +159,6 @@
     {
       "source": "/roofing-:city-co",
       "destination": "/roofing/:city",
-      "permanent": true
-    },
-    {
-      "source": "/casualty",
-      "destination": "/casualty",
       "permanent": true
     },
     {
@@ -199,16 +184,6 @@
     {
       "source": "/roof-repair-cost-estimates-insurance-appraisal",
       "destination": "/casualty/appraisal-and-umpire-support",
-      "permanent": true
-    },
-    {
-      "source": "/about",
-      "destination": "/about",
-      "permanent": true
-    },
-    {
-      "source": "/contact",
-      "destination": "/contact",
       "permanent": true
     }
   ],
