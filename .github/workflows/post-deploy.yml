@@ -1,19 +1,20 @@
 name: Post-deploy search engine ping
-# Fires when Vercel reports a successful production deployment on main, then submits the
-# sitemap to IndexNow and Bing. Needs no secrets: the IndexNow key is public by design.
+# Runs after every push to main (Vercel deploys main in about 15 to 30 seconds), then submits
+# every sitemap URL to IndexNow (Bing, Yandex, Seznam, Naver) and pings Bing. Manual run too.
 on:
-  deployment_status:
+  push:
+    branches: [main]
   workflow_dispatch:
 jobs:
   ping:
-    if: github.event_name == 'workflow_dispatch' || (github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'Production')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Wait for the edge to serve the new sitemap
-        run: sleep 45
+      - name: Wait for Vercel to finish the production deploy
+        if: github.event_name == 'push'
+        run: sleep 90
       - name: Submit sitemap to IndexNow and Bing
         run: node scripts/ping-search-engines.js
