@@ -4,6 +4,9 @@ const crypto = require('crypto');
 const SITE = 'https://standardroofingcompany.net';
 const LEAD_INBOX_ALIAS = process.env.CONTACT_TO || 'df411baad8fa5e3fa0848e207cddfed8'; // FormSubmit alias for info@standardroofingcompany.net
 const DB_URL = process.env.LEADS_DATABASE_URL || '';
+// Mail relay: a Google Apps Script web app in Doug's Google account that sends with Gmail.
+// Replaces FormSubmit, which refuses server posts and has outages.
+const MAIL_RELAY_URL = process.env.MAIL_RELAY_URL || '';
 
 const clean = (v, max = 3000) => String(v == null ? '' : v).replace(/\r/g, '').replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g, '').trim().slice(0, max);
 
@@ -60,6 +63,28 @@ async function relayEmail(subject, fields, replyTo) {
   return { ok: r.ok && String(data.success) !== 'false', status: r.status, data };
 }
 
+// Gmail relay. The relay only mails the fixed inbox it holds for each site key.
+async function mailRelay(site, subject, text, replyTo) {
+  if (!MAIL_RELAY_URL) return { ok: false, skipped: true, status: 0, data: { error: 'MAIL_RELAY_URL not set' } };
+  const ctl = new AbortController();
+  const timer = setTimeout(() => ctl.abort(), 12000);
+  try {
+    const r = await fetch(MAIL_RELAY_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({ site, subject, text, replyTo: replyTo || '' }),
+      redirect: 'follow',
+      signal: ctl.signal,
+    });
+    const data = await r.json().catch(() => ({}));
+    return { ok: r.ok && data.ok === true, status: r.status, data };
+  } catch (err) {
+    return { ok: false, status: 0, data: { error: String(err && err.message) } };
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 // Optional: Resend transport with real attachments when RESEND_API_KEY and LEAD_TO are set.
 async function resendEmail(subject, text, attachments, replyTo) {
   const key = process.env.RESEND_API_KEY;
@@ -74,4 +99,4 @@ async function resendEmail(subject, text, attachments, replyTo) {
   return { ok: r.ok, status: r.status };
 }
 
-module.exports = { SITE, LEAD_INBOX_ALIAS, clean, sql, photoToken, ipHash, clientIp, rateLimited, relayEmail, resendEmail, DB_URL };
+module.exports = { SITE, LEAD_INBOX_ALIAS, MAIL_RELAY_URL, clean, sql, photoToken, ipHash, clientIp, rateLimited, relayEmail, resendEmail, mailRelay, DB_URL };

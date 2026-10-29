@@ -2,8 +2,9 @@
 // 1. Rejects bots (honeypot field, too-fast submits, per-IP rate limit, size caps).
 // 2. Stores the lead and any photos in the leads database (LEADS_DATABASE_URL, Neon).
 // 3. Emails the lead to the inbox. Transport: Resend with attachments when RESEND_API_KEY
-//    is set, otherwise the FormSubmit relay to info@standardroofingcompany.net with photo links.
-const { SITE, LEAD_INBOX_ALIAS, clean, sql, photoToken, ipHash, clientIp, rateLimited, relayEmail, resendEmail, DB_URL } = require('./_lib');
+//    is set, otherwise the Gmail relay (MAIL_RELAY_URL) with photo links. FormSubmit is only a
+//    last-resort browser fallback.
+const { SITE, LEAD_INBOX_ALIAS, clean, sql, photoToken, ipHash, clientIp, rateLimited, relayEmail, resendEmail, mailRelay, DB_URL } = require('./_lib');
 
 const PHONE = '(970) 430-5884';
 const MAX_PHOTOS = 4;
@@ -72,13 +73,9 @@ module.exports = async (req, res) => {
     const viaResend = await resendEmail(subject, text + `\n\nSource: ${SITE}`, photos.map((p, i) => ({ name: clean(p.name, 120) || `photo-${i + 1}.jpg`, data: p.data })), replyTo);
     if (viaResend.ok) emailed = true;
     else {
-      const extra = Object.assign({}, fields);
-      if (photoLinks.length) extra['Photos'] = photoLinks.join('  ');
-      else if (photos.length) extra['Photos'] = `${photos.length} photo(s) were submitted but could not be stored; ask the customer to text them to ${PHONE}.`;
-      if (leadId) extra['Lead ID'] = String(leadId);
-      const out = await relayEmail(subject, extra, replyTo);
+      const out = await mailRelay('roofing', subject, text + (leadId ? `\nLead ID: ${leadId}` : '') + `\n\nSource: ${SITE}`, replyTo);
       emailed = out.ok;
-      if (!out.ok) { emailError = 'relay ' + out.status + ' ' + JSON.stringify(out.data).slice(0, 200); console.error('Relay failed', emailError); }
+      if (!out.ok) { emailError = 'mailrelay ' + out.status + ' ' + JSON.stringify(out.data).slice(0, 200); console.error('Mail relay failed', emailError); }
     }
   } catch (err) {
     emailError = 'exception ' + String(err && err.message).slice(0, 200);
