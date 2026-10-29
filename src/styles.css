@@ -497,9 +497,12 @@ section:not(.page-hero) .hero-img { box-shadow: var(--shadow); outline: 0; }
 
 /* Responsive */
 @media (max-width: 1200px) {
+  /* A backdrop-filter on the header would trap the fixed drawer inside the header box, so the
+     header drops the blur on these widths and the drawer covers the full screen height. */
+  .site-header { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(246, 243, 238, .98); }
   .menu-toggle { display: grid; position: relative; z-index: 70; }
   .nav {
-    position: fixed; top: 0; right: 0; bottom: 0; width: min(360px, 88vw);
+    position: fixed; top: 0; right: 0; bottom: 0; height: 100vh; height: 100dvh; overflow-y: auto; overscroll-behavior: contain; width: min(360px, 88vw);
     flex-direction: column; align-items: stretch; gap: 2px;
     background: var(--paper); border-left: 1px solid var(--line); padding: 96px 22px 30px;
     transform: translateX(100%); visibility: hidden; transition: transform .3s ease, visibility 0s linear .3s; z-index: 60;
