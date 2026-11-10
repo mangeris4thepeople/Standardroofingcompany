@@ -6,7 +6,7 @@
 //    last-resort browser fallback.
 const { SITE, LEAD_INBOX_ALIAS, clean, sql, photoToken, ipHash, clientIp, rateLimited, relayEmail, resendEmail, mailRelay, DB_URL } = require('./_lib');
 
-const PHONE = '(970) 430-5884';
+const PHONE = '(970) 469-8302';
 const MAX_PHOTOS = 4;
 const MAX_PHOTO_BYTES = 1.6 * 1024 * 1024; // base64 length per photo
 const FIELD_LABELS = { name: 'Name', phone: 'Phone', email: 'Email', address: 'Property address', city: 'City page', service: 'Service page', roof_type: 'Roof type', issue: 'Issue', message: 'Details', matter: 'Matter', firm: 'Firm', role: 'Role', page: 'Page', referrer: 'Referrer' };
