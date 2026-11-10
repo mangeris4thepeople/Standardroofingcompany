@@ -8,7 +8,7 @@ The site is built. This is the off-site work that turns it into traffic. Do it i
 Standard Roofing Company
 1180 E 3rd St
 Loveland, CO 80537
-(970) 430-5884
+(970) 469-8302
 info@standardroofingcompany.net
 https://standardroofingcompany.net
 Monday to Saturday, 7:00 AM to 6:00 PM
@@ -25,7 +25,7 @@ Every listing, citation, social profile, and invoice footer uses this text verba
    - Primary: `Roofing Contractor`
    - Secondary: `Metal Roofing Contractor`, `Roof Repair`, `Commercial Roofer` (Google's names may read "Roofing contractor", "Metal roofing contractor", "Roof repair", "Commercial roofing contractor"; pick the closest match)
 5. Service areas (add all 20): Loveland CO, Fort Collins CO, Greeley CO, Windsor CO, Berthoud CO, Longmont CO, Johnstown CO, Wellington CO, Timnath CO, Estes Park CO, Nederland CO, Winter Park CO, Granby CO, Grand Lake CO, Steamboat Springs CO, Breckenridge CO, Frisco CO, Silverthorne CO, Vail CO, Red Feather Lakes CO. (Glen Haven and Drake are unincorporated and usually not selectable; Larimer County, CO covers them.)
-6. Phone: (970) 430-5884. Website: https://standardroofingcompany.net. Appointment link: https://standardroofingcompany.net/free-roof-inspection.
+6. Phone: (970) 469-8302. Website: https://standardroofingcompany.net. Appointment link: https://standardroofingcompany.net/free-roof-inspection.
 7. Hours: Monday to Saturday 7:00 AM to 6:00 PM, Sunday closed.
 8. Description (750 characters max, keep the first sentence keyword-first):
    `Standard Roofing Company is a licensed and insured roofing contractor in Loveland, Colorado serving Northern Colorado and the mountain towns. We install and repair metal, standing seam, slate, tile, cedar shake, synthetic, and roof coatings, plus asphalt shingle replacement, hail and storm damage repair, insurance claim roofing, and roof inspections for homeowners, HOAs, and commercial property managers. Every job gets a free photo-documented inspection, a written itemized estimate, one accountable project lead, and a clean closeout. We never pay or waive deductibles, as Colorado law requires. Our casualty group also provides expert roof inspections, hail documentation, and cause and origin reports for attorneys and public adjusters.`
