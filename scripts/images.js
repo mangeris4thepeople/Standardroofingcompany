@@ -282,7 +282,7 @@ ${markGlyph(72, 64, 64)}
 <text x="72" y="214" font-family="${DISPLAY_B}" font-size="18" fill="${C.copperL}" letter-spacing="4">${esc(kicker.toUpperCase())}</text>
 ${text}
 <rect x="72" y="540" width="56" height="5" fill="${C.copper}"/>
-<text x="72" y="584" font-family="${BODY}" font-size="21" fill="${C.bone}">Free inspections | (970) 430-5884 | standardroofingcompany.net</text></svg>`;
+<text x="72" y="584" font-family="${BODY}" font-size="21" fill="${C.bone}">Free inspections | (970) 469-8302 | standardroofingcompany.net</text></svg>`;
 }
 
 // ---------- logo mark ----------
