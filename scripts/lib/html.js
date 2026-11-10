@@ -75,7 +75,7 @@ function footer(site, model) {
 <div class="foot-grid">
 <div>${lockup('p')}
 <p class="foot-about">Residential, commercial, and specialty roofing from Loveland, Colorado. Metal, slate, tile, cedar, synthetic, coatings, hail and storm repair, and insurance claim roofing across Northern Colorado and the mountains.</p>
-<address class="foot-nap"><strong>${esc(site.name)}</strong><br>${esc(a.street)}<br>${esc(a.city)}, ${esc(a.state)} ${esc(a.zip)}<br><a href="tel:${site.phoneE164}">${esc(site.phone)}</a><br><a href="mailto:${site.email}">${esc(site.email)}</a><br>${esc(site.hoursDisplay)}<br><a href="https://www.facebook.com/profile.php?id=61595916463855" rel="noopener" aria-label="Standard Roofing Company on Facebook">Facebook</a></address></div>
+<address class="foot-nap"><strong>${esc(site.name)}</strong><br>${esc(a.street)}<br>${esc(a.city)}, ${esc(a.state)} ${esc(a.zip)}<br><a href="tel:${site.phoneE164}">${esc(site.phone)}</a><br><a href="mailto:${site.email}">${esc(site.email)}</a><br>${esc(site.hoursDisplay)}<br><a href="https://www.facebook.com/standardroofingcompany" rel="noopener" aria-label="Standard Roofing Company on Facebook">Facebook</a> &middot; <a href="https://www.linkedin.com/company/standardroofingcompany" rel="noopener" aria-label="Standard Roofing Company on LinkedIn">LinkedIn</a></address></div>
 <div><h2 class="foot-h">Services</h2><ul>${svc}<li><a href="/services">All services</a></li></ul></div>
 <div><h2 class="foot-h">Northern Colorado</h2><ul>${noco}</ul></div>
 <div><h2 class="foot-h">Mountain Towns</h2><ul>${mtn}<li><a href="/service-areas">All service areas</a></li></ul></div>
