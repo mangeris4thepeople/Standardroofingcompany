@@ -2,7 +2,7 @@
   "404": {
     "h1": "That page blew off in the storm",
     "title": "Page Not Found",
-    "description": "That page is not here. Find roofing services, service areas, guides, and a free roof inspection from Standard Roofing Company in Loveland, Colorado.",
+    "description": "That page is not here. Find roofing services, service areas, guides, and a free roof estimate from Standard Roofing Company in Loveland, Colorado.",
     "keywords": [
       "404",
       "page not found",
@@ -13,7 +13,7 @@
   "home": {
     "h1": "Roofing Contractor in Loveland, Colorado",
     "title": "Roofing Contractor Loveland CO",
-    "description": "Loveland roofer for metal, slate, tile, cedar, synthetic, hail repair, and insurance claim roofing across Northern Colorado. Get a free inspection.",
+    "description": "Loveland roofer for metal, slate, tile, cedar, synthetic, hail repair, and insurance claim roofing across Northern Colorado. Get a free estimate.",
     "keywords": [
       "roofing contractor loveland co",
       "roofer loveland colorado",
@@ -46,7 +46,7 @@
   "service-areas": {
     "h1": "Roofing Service Areas in Colorado",
     "title": "Roofing Service Areas Colorado",
-    "description": "Roofing in Loveland, Fort Collins, Greeley, Windsor, Longmont, Estes Park, and mountain towns from Vail to Steamboat Springs. Request a free inspection.",
+    "description": "Roofing in Loveland, Fort Collins, Greeley, Windsor, Longmont, Estes Park, and mountain towns from Vail to Steamboat Springs. Request a free estimate.",
     "keywords": [
       "roofing service areas northern colorado",
       "roofer near me loveland",
@@ -65,7 +65,7 @@
   "about": {
     "h1": "About Standard Roofing Company",
     "title": "About Standard Roofing Company",
-    "description": "Standard Roofing Company is a licensed and insured Loveland, Colorado roofer serving Northern Colorado and the mountains. Book a free inspection.",
+    "description": "Standard Roofing Company is a licensed and insured Loveland, Colorado roofer serving Northern Colorado and the mountains. Request a free estimate.",
     "keywords": [
       "about standard roofing company",
       "loveland colorado roofing company",
@@ -81,15 +81,15 @@
       },
       {
         "h2": "How we work",
-        "html": "<p>Every job, from a pipe boot to a 40,000 square foot membrane, runs the same five steps.</p><ol><li><strong>Inspect.</strong> A free on-roof inspection. Every slope, penetration, flashing detail, and attic condition photographed.</li><li><strong>Report.</strong> A written condition report with photos and a clear recommendation, including \"no roof needed\" when that is the truth.</li><li><strong>Scope and price.</strong> An itemized estimate: materials, quantities, tear-off, decking allowance, ventilation, flashing, permit, cleanup, and schedule. Insurance scopes reviewed line by line once you sign with us.</li><li><strong>Build.</strong> One accountable project lead on site. Property protected, crew briefed before the first shingle comes off, magnetic nail sweeps daily, inspections scheduled with the permit authority.</li><li><strong>Close out.</strong> A final walk, a photo closeout package, warranty paperwork, and a clean yard.</li></ol><p>That process is how commercial construction is managed, and it is the reason our residential customers know the price, the schedule, and the person responsible before any work starts.</p>"
+        "html": "<p>Every job, from a pipe boot to a 40,000 square foot membrane, runs the same five steps.</p><ol><li><strong>Inspect.</strong> An on-roof inspection, with the fee quoted before we come out. Every slope, penetration, flashing detail, and attic condition photographed.</li><li><strong>Report.</strong> A written condition report with photos and a clear recommendation, including \"no roof needed\" when that is the truth.</li><li><strong>Scope and price.</strong> An itemized estimate: materials, quantities, tear-off, decking allowance, ventilation, flashing, permit, cleanup, and schedule. Insurance scopes reviewed line by line once you sign with us.</li><li><strong>Build.</strong> One accountable project lead on site. Property protected, crew briefed before the first shingle comes off, magnetic nail sweeps daily, inspections scheduled with the permit authority.</li><li><strong>Close out.</strong> A final walk, a photo closeout package, warranty paperwork, and a clean yard.</li></ol><p>That process is how commercial construction is managed, and it is the reason our residential customers know the price, the schedule, and the person responsible before any work starts.</p>"
       },
       {
         "h2": "What we will not do",
-        "html": "<ul><li><strong>We never pay, waive, or rebate a deductible.</strong> Colorado law (C.R.S. 6-22-105) prohibits it, and a roofer who offers it is either breaking the law or hiding the cost in your scope.</li><li><strong>We do not act as your public adjuster.</strong> We document damage and, once you have signed with us, meet your adjuster on the roof to walk through what we found. The claim stays yours.</li><li><strong>We do not sell a roof you do not need.</strong> Plenty of hail inspections end with a report that says the roof is fine. That report is free, and it is yours to keep.</li><li><strong>We do not disappear after the storm season.</strong> We live and work in Larimer County. The phone number on this page is the one that answers next year.</li></ul>"
+        "html": "<ul><li><strong>We never pay, waive, or rebate a deductible.</strong> Colorado law (C.R.S. 6-22-105) prohibits it, and a roofer who offers it is either breaking the law or hiding the cost in your scope.</li><li><strong>We do not act as your public adjuster.</strong> We document damage and, once you have signed with us, meet your adjuster on the roof to walk through what we found. The claim stays yours.</li><li><strong>We do not sell a roof you do not need.</strong> Plenty of hail inspections end with a report that says the roof is fine. That report is yours to keep.</li><li><strong>We do not disappear after the storm season.</strong> We live and work in Larimer County. The phone number on this page is the one that answers next year.</li></ul>"
       },
       {
         "h2": "Where we work",
-        "html": "<p>Our home market is the northern Front Range: <a href=\"/roofing/loveland\">Loveland</a>, <a href=\"/roofing/fort-collins\">Fort Collins</a>, <a href=\"/roofing/greeley\">Greeley</a>, <a href=\"/roofing/windsor\">Windsor</a>, <a href=\"/roofing/berthoud\">Berthoud</a>, <a href=\"/roofing/longmont\">Longmont</a>, <a href=\"/roofing/johnstown\">Johnstown</a>, <a href=\"/roofing/wellington\">Wellington</a>, <a href=\"/roofing/timnath\">Timnath</a>, and <a href=\"/roofing/estes-park\">Estes Park</a>. We also take mountain projects where the roof has to be engineered for snow load and embers: Nederland, Winter Park, Granby, Grand Lake, Steamboat Springs, Breckenridge, Frisco, Silverthorne, Vail, Red Feather Lakes, Glen Haven, and Drake. See every town on the <a href=\"/service-areas\">service areas</a> page.</p><p>Hours are Monday to Saturday, 7am to 6pm. Call <a href=\"tel:+19704698302\">(970) 469-8302</a>, email <a href=\"mailto:info@standardroofingcompany.net\">info@standardroofingcompany.net</a>, or <a href=\"/free-roof-inspection\">request a free inspection</a> online.</p>"
+        "html": "<p>Our home market is the northern Front Range: <a href=\"/roofing/loveland\">Loveland</a>, <a href=\"/roofing/fort-collins\">Fort Collins</a>, <a href=\"/roofing/greeley\">Greeley</a>, <a href=\"/roofing/windsor\">Windsor</a>, <a href=\"/roofing/berthoud\">Berthoud</a>, <a href=\"/roofing/longmont\">Longmont</a>, <a href=\"/roofing/johnstown\">Johnstown</a>, <a href=\"/roofing/wellington\">Wellington</a>, <a href=\"/roofing/timnath\">Timnath</a>, and <a href=\"/roofing/estes-park\">Estes Park</a>. We also take mountain projects where the roof has to be engineered for snow load and embers: Nederland, Winter Park, Granby, Grand Lake, Steamboat Springs, Breckenridge, Frisco, Silverthorne, Vail, Red Feather Lakes, Glen Haven, and Drake. See every town on the <a href=\"/service-areas\">service areas</a> page.</p><p>Hours are Monday to Saturday, 7am to 6pm. Call <a href=\"tel:+19704698302\">(970) 469-8302</a>, email <a href=\"mailto:info@standardroofingcompany.net\">info@standardroofingcompany.net</a>, or <a href=\"/free-roof-estimate\">request a free estimate</a> online.</p>"
       }
     ]
   },
@@ -194,7 +194,7 @@
   "gallery": {
     "h1": "Roofing Systems Gallery",
     "title": "Roofing Gallery, Colorado",
-    "description": "See the roofing systems we install across Northern Colorado: standing seam metal, slate, tile, cedar shake, synthetic, and coatings. Get a free inspection.",
+    "description": "See the roofing systems we install across Northern Colorado: standing seam metal, slate, tile, cedar shake, synthetic, and coatings. Get a free estimate.",
     "keywords": [
       "roofing gallery colorado",
       "metal roof photos colorado",
@@ -208,7 +208,7 @@
   "reviews": {
     "h1": "Standard Roofing Company Reviews",
     "title": "Reviews, Standard Roofing Company",
-    "description": "Read reviews of Standard Roofing Company, a Loveland, Colorado roofer, and see how we earn them: written scopes and photo reports. Book a free inspection.",
+    "description": "Read reviews of Standard Roofing Company, a Loveland, Colorado roofer, and see how we earn them: written scopes and photo reports. Request a free estimate.",
     "keywords": [
       "standard roofing company reviews",
       "loveland roofer reviews",
@@ -224,62 +224,71 @@
       },
       {
         "h2": "What customers can expect, in writing",
-        "html": "<ul><li>A free, photo-documented inspection and a written condition report, even when the answer is \"no work needed.\"</li><li>An itemized estimate with materials, quantities, schedule, and payment terms spelled out before signing.</li><li>One accountable project lead from the first call through the final walk.</li><li>Daily cleanup and magnetic nail sweeps, property protection, and a closeout photo package.</li><li>A written workmanship warranty plus the manufacturer warranty registered in your name. See <a href=\"/warranty\">how roofing warranties work</a>.</li><li>No deductible games, ever. Colorado law prohibits it and so do we.</li></ul><p>Ready to see it for yourself? <a href=\"/free-roof-inspection\">Request a free inspection</a> or read about <a href=\"/about\">how we work</a>.</p>"
+        "html": "<ul><li>A photo-documented inspection and a written condition report, even when the answer is \"no work needed.\"</li><li>An itemized estimate with materials, quantities, schedule, and payment terms spelled out before signing.</li><li>One accountable project lead from the first call through the final walk.</li><li>Daily cleanup and magnetic nail sweeps, property protection, and a closeout photo package.</li><li>A written workmanship warranty plus the manufacturer warranty registered in your name. See <a href=\"/warranty\">how roofing warranties work</a>.</li><li>No deductible games, ever. Colorado law prohibits it and so do we.</li></ul><p>Ready to see it for yourself? <a href=\"/free-roof-estimate\">Request a free estimate</a> or read about <a href=\"/about\">how we work</a>.</p>"
       }
     ]
   },
   "contact": {
     "h1": "Contact Standard Roofing Company",
     "title": "Contact Us, Loveland Roofer",
-    "description": "Contact Standard Roofing Company, 1180 E 3rd St, Loveland, CO 80537. Call (970) 469-8302 or email us to book a free roof inspection.",
+    "description": "Contact Standard Roofing Company, 1180 E 3rd St, Loveland, CO 80537. Call (970) 469-8302 or email us to request a free roof estimate.",
     "keywords": [
       "contact standard roofing company",
       "roofer loveland phone number",
       "roofing company near me loveland",
       "1180 e 3rd st loveland",
-      "free roof inspection loveland"
+      "free roof estimate loveland"
     ],
     "lede": "Call, email, or send the form. Post-storm inspections are scheduled within a few days across Northern Colorado; mountain projects are scheduled by season.",
     "sections": []
   },
-  "free-roof-inspection": {
-    "h1": "Free Roof Inspection in Northern Colorado",
-    "title": "Free Roof Inspection Colorado",
-    "description": "Book a free, photo-documented roof inspection in Loveland, Fort Collins, Greeley, Windsor, Longmont, Estes Park, and the mountains. Request yours today.",
+  "free-roof-estimate": {
+    "h1": "Free Roof Estimate in Northern Colorado",
+    "title": "Free Roof Estimate Colorado",
+    "description": "Get a free, written, itemized estimate for roof repair or replacement in Loveland, Fort Collins, Greeley, and the mountains. Request your estimate today.",
     "keywords": [
-      "free roof inspection colorado",
-      "free roof inspection loveland",
-      "free hail damage inspection fort collins",
-      "roof inspection near me",
+      "free roof estimate colorado",
+      "free roof estimate loveland",
+      "free roof replacement estimate fort collins",
+      "free roof repair estimate",
+      "roof estimate near me",
       "free roof estimate northern colorado"
     ],
-    "lede": "A real inspection, not a sales call. We walk the roof, photograph every slope and detail, check the attic when we can, and send you a written report you can act on, whether that means a repair, a claim, a replacement, or nothing at all.",
+    "lede": "A free, no-obligation written estimate for roof repair or roof replacement. It is itemized, with materials, quantities, schedule, and warranty terms in writing, so you can see exactly what the work includes before you decide.",
     "sections": [
       {
-        "h2": "What the free inspection includes",
-        "html": "<ul><li><strong>On-roof walk</strong> of every slope, with drone imaging when a roof is too steep or fragile to walk safely.</li><li><strong>Photo documentation</strong> of hail bruising, granule loss, wind lift, cracked tile or slate, split shakes, flashing, pipe boots, valleys, skylights, and gutters.</li><li><strong>Attic check</strong> for ventilation, moisture staining, and daylight, when there is access.</li><li><strong>Written condition report</strong> with photos, a plain-language explanation, and a recommendation: repair, monitor, replace, or file a claim.</li><li><strong>Itemized estimate</strong> if work is recommended, with materials, quantities, schedule, and warranty terms in writing.</li></ul>"
+        "h2": "What the free estimate includes",
+        "html": "<ul><li><strong>Written and itemized.</strong> The work is broken out line by line, not given as a single number.</li><li><strong>Materials and quantities.</strong> The roof system and the amount of each material, in writing.</li><li><strong>Schedule.</strong> The schedule for the work, in writing.</li><li><strong>Warranty terms in writing.</strong> What the manufacturer and workmanship warranties cover, spelled out on the estimate.</li><li><strong>No obligation.</strong> The estimate is free, and you are under no obligation to hire us.</li></ul>"
+      },
+      {
+        "h2": "Estimates and inspections are different",
+        "html": "<p>The free estimate covers roof repair and roof replacement. A roof inspection is a separate, paid service: it carries a fee, and we quote that fee before we come out. An inspection walks every slope, photographs what we find, uses test squares when hail is the question, and ends in a written condition report. See <a href=\"/services/roof-inspections\">roof inspections</a> for what that service covers, including post-storm, pre-listing, pre-purchase, and commercial maintenance inspections.</p>"
       },
       {
         "h2": "What happens next",
-        "html": "<p>Within one business day of your request we call to schedule. Most Northern Colorado inspections happen within a few days; after a major hail storm the queue runs longer, so request early. You get the report within a day or two of the visit. There is no obligation, no pressure, and no deposit to see the report. If the roof is fine, the report says so and we part ways until the next storm.</p><p>Free inspections run from Berthoud and Longmont to Greeley and Estes Park, and north to the wind-exposed plains covered on our <a href=\"/roofing/wellington\">Wellington roof inspection</a> page. If the report shows hail, our <a href=\"/services/hail-damage-roof-repair\">hail damage roof repair</a> page explains the repair, replacement, and claim options.</p><p>If you have an active leak, say so in the form or call <a href=\"tel:+19704698302\">(970) 469-8302</a>; we prioritize emergency tarping and dry-in ahead of routine inspections. See <a href=\"/services/storm-damage-roofing\">storm damage roofing</a> for what to do in the first 24 hours.</p>"
+        "html": "<p>Within one business day of your request we call to schedule. After a major hail storm the queue runs longer, so request early. There is no obligation and no pressure.</p><p>We write estimates from Berthoud and Longmont to Greeley and Estes Park, and north to the wind-exposed plains covered on our <a href=\"/roofing/wellington\">Wellington roof inspection</a> page. If you suspect hail, our <a href=\"/services/hail-damage-roof-repair\">hail damage roof repair</a> page explains the repair, replacement, and claim options.</p><p>If you have an active leak, say so in the form or call <a href=\"tel:+19704698302\">(970) 469-8302</a>; we prioritize emergency tarping and dry-in ahead of routine work. See <a href=\"/services/storm-damage-roofing\">storm damage roofing</a> for what to do in the first 24 hours.</p>"
       }
     ],
     "faq": [
       {
-        "q": "Is the inspection really free, with no strings attached?",
-        "a": "Yes. The inspection and the written report are free, and you are under no obligation to hire us, file a claim, or do anything with the report. We earn the work by being right about the roof, not by charging to look at it."
+        "q": "Is the estimate really free?",
+        "a": "Yes. The written, itemized estimate for roof repair or roof replacement is free, and you are under no obligation to hire us, file a claim, or do anything with it. Roof inspections are a separate service that carries a fee, and we quote that fee before we come out."
       },
       {
-        "q": "Do you inspect roofs for insurance claims?",
-        "a": "Yes. Post-storm inspections document hail and wind damage with photos you can hand to your insurer. Once you sign with us for the repair or replacement, we can meet your adjuster on the roof. We never act as your public adjuster and never waive deductibles."
+        "q": "Is a roof inspection free?",
+        "a": "No. A roof inspection is a paid service, and we quote the fee before we come out. It includes an on-roof walk of every slope that is safe to walk, photographs, test squares when hail is the question, and a written condition report. The free offer is the written estimate for roof repair or roof replacement."
       },
       {
-        "q": "Do you inspect commercial and HOA roofs?",
-        "a": "Yes. Low-slope commercial, multifamily, and HOA roofs get the same photo-documented inspection, plus a maintenance recommendation. Property managers receive a written report they can share with boards and insurers."
+        "q": "Do you help with insurance claims?",
+        "a": "Yes. You can request a free estimate for the repair or replacement, and you decide whether to file and file the claim with your carrier. If you want storm damage documented with photos and test squares, that is a roof inspection, a paid service with the fee quoted before we come out. Once you sign with us for the repair or replacement, we can meet your adjuster on the roof. We never act as your public adjuster and never waive deductibles."
       },
       {
-        "q": "How far do you travel for a free inspection?",
-        "a": "Free inspections cover our Northern Colorado service area from Berthoud and Longmont to Wellington, Greeley, and Estes Park. Mountain towns are scheduled as project visits by season; call to discuss timing."
+        "q": "Do you write estimates for commercial and HOA roofs?",
+        "a": "Yes. Low-slope commercial, multifamily, and HOA roofs get the same written, itemized estimate, with materials, quantities, schedule, and warranty terms in writing. Property managers receive a document they can share with boards and insurers."
+      },
+      {
+        "q": "How far do you travel for a free estimate?",
+        "a": "Free estimates cover our Northern Colorado service area from Berthoud and Longmont to Wellington, Greeley, and Estes Park. Mountain towns are scheduled as project visits by season; call to discuss timing."
       }
     ]
   },

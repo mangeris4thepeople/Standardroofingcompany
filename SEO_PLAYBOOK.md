@@ -25,22 +25,22 @@ Every listing, citation, social profile, and invoice footer uses this text verba
    - Primary: `Roofing Contractor`
    - Secondary: `Metal Roofing Contractor`, `Roof Repair`, `Commercial Roofer` (Google's names may read "Roofing contractor", "Metal roofing contractor", "Roof repair", "Commercial roofing contractor"; pick the closest match)
 5. Service areas (add all 20): Loveland CO, Fort Collins CO, Greeley CO, Windsor CO, Berthoud CO, Longmont CO, Johnstown CO, Wellington CO, Timnath CO, Estes Park CO, Nederland CO, Winter Park CO, Granby CO, Grand Lake CO, Steamboat Springs CO, Breckenridge CO, Frisco CO, Silverthorne CO, Vail CO, Red Feather Lakes CO. (Glen Haven and Drake are unincorporated and usually not selectable; Larimer County, CO covers them.)
-6. Phone: (970) 469-8302. Website: https://standardroofingcompany.net. Appointment link: https://standardroofingcompany.net/free-roof-inspection.
+6. Phone: (970) 469-8302. Website: https://standardroofingcompany.net. Appointment link: https://standardroofingcompany.net/free-roof-estimate.
 7. Hours: Monday to Saturday 7:00 AM to 6:00 PM, Sunday closed.
 8. Description (750 characters max, keep the first sentence keyword-first):
-   `Standard Roofing Company is a licensed and insured roofing contractor in Loveland, Colorado serving Northern Colorado and the mountain towns. We install and repair metal, standing seam, slate, tile, cedar shake, synthetic, and roof coatings, plus asphalt shingle replacement, hail and storm damage repair, insurance claim roofing, and roof inspections for homeowners, HOAs, and commercial property managers. Every job gets a free photo-documented inspection, a written itemized estimate, one accountable project lead, and a clean closeout. We never pay or waive deductibles, as Colorado law requires. Our casualty group also provides expert roof inspections, hail documentation, and cause and origin reports for attorneys and public adjusters.`
+   `Standard Roofing Company is a licensed and insured roofing contractor in Loveland, Colorado serving Northern Colorado and the mountain towns. We install and repair metal, standing seam, slate, tile, cedar shake, synthetic, and roof coatings, plus asphalt shingle replacement, hail and storm damage repair, insurance claim roofing, and roof inspections for homeowners, HOAs, and commercial property managers. Every job gets a free, written, itemized estimate, one accountable project lead, and a clean closeout. We never pay or waive deductibles, as Colorado law requires. Our casualty group also provides expert roof inspections, hail documentation, and cause and origin reports for attorneys and public adjusters.`
 9. Services: add each of the 14 service pages as a service, using the page's H1 as the service name and the page's first sentence as the description, with the page URL. Add the casualty services under a "Expert and litigation services" heading.
 10. Attributes: "Identifies as Colorado-owned" is not an attribute; skip identity attributes. Do not select veteran-owned. Select "Online estimates" and "Onsite services".
 11. Photos: upload the logo (public/images/logo-512.png), a cover image (public/images/og-image.png is 1200x630; Google prefers 1024x576 or larger landscape), and real job-site photos as soon as the first jobs close out. Listings with 100+ photos get materially more calls. Add 3 to 5 photos a week.
 12. Verify. Google will offer video verification for a service-area business: a live walkthrough showing the work vehicle, tools, signage, and business documents. Have a vehicle magnet or yard sign, the business license, and an insurance certificate ready before starting.
 13. Once live, copy the profile's share URL (Business Profile > Share) into `content/site.json` under `sameAs`, rebuild, and push. That links the website schema to the listing.
-14. Turn on messaging, set up the free Google booking link to /free-roof-inspection, and post a Google Post once a week (reuse blog posts).
+14. Turn on messaging, set up the free Google booking link to /free-roof-estimate, and post a Google Post once a week (reuse blog posts).
 
 ## 3. Search Console and Bing Webmaster
 
 1. Google Search Console: add property `standardroofingcompany.net` (domain property). Verify by DNS TXT at Namecheap, or use the HTML tag: set `GSC_VERIFICATION` in Vercel project env vars to the token Google gives you (the part after `content="`), redeploy, and verify. The build injects the meta tag and also writes `/<token>.html`. The existing file googleabcedbf3dc9f6325.html is kept in public/ so the earlier verification still works.
 2. Submit the sitemap: https://standardroofingcompany.net/sitemap.xml.
-3. Request indexing for the home page, /services, /service-areas, /free-roof-inspection, and the three highest-value service pages (hail-damage-roof-repair, roof-replacement, metal-roofing). Google allows about 10 requests a day.
+3. Request indexing for the home page, /services, /service-areas, /free-roof-estimate, and the three highest-value service pages (hail-damage-roof-repair, roof-replacement, metal-roofing). Google allows about 10 requests a day.
 4. Bing Webmaster Tools: import from Search Console (one click) or verify with `BING_VERIFICATION` env var (the build emits the msvalidate.01 meta tag and BingSiteAuth.xml). Submit the same sitemap. IndexNow is already wired, so Bing gets every new page within minutes of a deploy.
 5. Google Analytics 4: create a property, copy the G- measurement ID into the `GA_MEASUREMENT_ID` env var in Vercel (production), redeploy. The site then reports page views, phone_click, text_click, cta_click, and generate_lead events. Mark generate_lead and phone_click as key events in GA4.
 
@@ -77,7 +77,7 @@ Week 1
 
 Week 2
 - Tue: Standing seam vs exposed fastener metal roofs: which one for a Colorado home
-- Fri: What a free roof inspection actually covers (and what a bad one skips)
+- Fri: What a roof inspection actually covers (and what a bad one skips)
 
 Week 3
 - Tue: Cosmetic damage exclusions on metal roofs: what Colorado insurers will and will not pay

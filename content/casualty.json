@@ -96,7 +96,7 @@
       "sections": [
         {
           "h2": "What a forensic roof inspection is",
-          "html": "<p>A forensic inspection differs from the <a href=\"/services/roof-inspections\">free homeowner inspection</a> we offer on the roofing side in purpose and in rigor. The homeowner inspection answers whether a roof needs work. The forensic inspection creates a record that can be produced in discovery, tested in deposition, and relied on by a trier of fact. That means a defined scope agreed with counsel, a repeatable photo protocol, measurements taken on the roof rather than estimated from a desk, and a written chain of custody for anything that leaves the property.</p><p>We inspect steep-slope asphalt shingle, tile, slate, cedar, synthetic, and metal roofs, and low-slope TPO, EPDM, PVC, and modified bitumen systems, on single-family, multifamily, HOA, and commercial buildings across Colorado. The inspection stands on its own or feeds a <a href=\"/casualty/cause-and-origin-reports\">cause and origin report</a>, a <a href=\"/casualty/construction-defect-review\">defect review</a>, or an <a href=\"/casualty/appraisal-and-umpire-support\">appraisal scope</a>.</p>"
+          "html": "<p>A forensic inspection differs from the <a href=\"/services/roof-inspections\">homeowner roof inspection</a> we offer on the roofing side in purpose and in rigor. The homeowner inspection answers whether a roof needs work. The forensic inspection creates a record that can be produced in discovery, tested in deposition, and relied on by a trier of fact. That means a defined scope agreed with counsel, a repeatable photo protocol, measurements taken on the roof rather than estimated from a desk, and a written chain of custody for anything that leaves the property.</p><p>We inspect steep-slope asphalt shingle, tile, slate, cedar, synthetic, and metal roofs, and low-slope TPO, EPDM, PVC, and modified bitumen systems, on single-family, multifamily, HOA, and commercial buildings across Colorado. The inspection stands on its own or feeds a <a href=\"/casualty/cause-and-origin-reports\">cause and origin report</a>, a <a href=\"/casualty/construction-defect-review\">defect review</a>, or an <a href=\"/casualty/appraisal-and-umpire-support\">appraisal scope</a>.</p>"
         },
         {
           "h2": "What we document",
@@ -117,8 +117,8 @@
       ],
       "faq": [
         {
-          "q": "How is a forensic inspection different from a free roof inspection?",
-          "a": "A free homeowner inspection answers whether a roof needs work and what it would cost. A forensic inspection follows a scope agreed with counsel, uses a repeatable photo and measurement protocol, keeps chain of custody for anything removed, and produces a report formatted for disclosure and cross-examination. The retention letter sets the role before anyone goes on the roof."
+          "q": "How is a forensic inspection different from a homeowner roof inspection?",
+          "a": "A homeowner roof inspection answers whether a roof needs work and what it would cost. A forensic inspection follows a scope agreed with counsel, uses a repeatable photo and measurement protocol, keeps chain of custody for anything removed, and produces a report formatted for disclosure and cross-examination. The retention letter sets the role before anyone goes on the roof."
         },
         {
           "q": "Will you attend a joint inspection with the other side's expert?",

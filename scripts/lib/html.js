@@ -57,11 +57,11 @@ function img(src, alt, opts = {}) {
 function header(site, current) {
   const links = site.nav.map((n) => `<a href="${n.href}"${current === n.href ? ' aria-current="page"' : ''}>${esc(n.label)}</a>`).join('');
   return `<a class="skip" href="#main">Skip to content</a>
-<div class="topbar"><div class="wrap"><span class="tb-left"><i class="dot"></i>Northern Colorado and mountain roofing | Licensed and insured | Free inspections</span><a href="tel:${site.phoneE164}" data-cta="call">${ICON.phone}Call ${esc(site.phone)}</a></div></div>
+<div class="topbar"><div class="wrap"><span class="tb-left"><i class="dot"></i>Northern Colorado and mountain roofing | Licensed and insured | Free estimates</span><a href="tel:${site.phoneE164}" data-cta="call">${ICON.phone}Call ${esc(site.phone)}</a></div></div>
 <header class="site-header"><div class="wrap">
 <a class="brand" href="/" aria-label="Standard Roofing Company home">${lockup()}</a>
 <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">${ICON.menu}</button>
-<nav class="nav" id="nav" aria-label="Main"><a href="/"${current === '/' ? ' aria-current="page"' : ''}>Home</a>${links}<a class="btn btn-copper" href="/free-roof-inspection" data-cta="nav">Free Inspection</a></nav>
+<nav class="nav" id="nav" aria-label="Main"><a href="/"${current === '/' ? ' aria-current="page"' : ''}>Home</a>${links}<a class="btn btn-copper" href="/free-roof-estimate" data-cta="nav">Free Estimate</a></nav>
 </div></header>`;
 }
 
@@ -81,13 +81,13 @@ function footer(site, model) {
 <div><h2 class="foot-h">Mountain Towns</h2><ul>${mtn}<li><a href="/service-areas">All service areas</a></li></ul></div>
 <div><h2 class="foot-h">Attorneys and Adjusters</h2><ul><li><a href="/casualty">Casualty and litigation</a></li>${cas}</ul></div>
 <div><h2 class="foot-h">Company</h2><ul>
-<li><a href="/about">About</a></li><li><a href="/free-roof-inspection">Free roof inspection</a></li><li><a href="/financing">Financing</a></li><li><a href="/warranty">Warranty</a></li><li><a href="/gallery">Gallery</a></li><li><a href="/reviews">Reviews</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div>
+<li><a href="/about">About</a></li><li><a href="/free-roof-estimate">Free roof estimate</a></li><li><a href="/financing">Financing</a></li><li><a href="/warranty">Warranty</a></li><li><a href="/gallery">Gallery</a></li><li><a href="/reviews">Reviews</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div>
 </div>
 <div class="sister"><strong>Full service, residential to commercial.</strong> Homes are designed and built by <a href="https://www.standardbuildingcompany.net/" rel="noopener">Standard Building Company</a>. Commercial projects are developed and built by <a href="https://standarddevelopmentcompany.com/" rel="noopener">Standard Development Company</a>. And the roof on top of it all comes from us, Standard Roofing Company. And the websites and data tools behind it all are built by <a href="https://standarddatacompany.net/" rel="noopener">Standard Data Company</a>.</div>
 <div class="legal"><span>&copy; <span data-year>2026</span> ${esc(site.name)}. All rights reserved.</span><span>Colorado law (C.R.S. 6-22-105) prohibits roofing contractors from paying, waiving, or rebating an insurance deductible. We never do.</span></div>
 </div></footer>
-<div class="callbar"><a href="tel:${site.phoneE164}" data-cta="callbar">${ICON.phone}Call</a><a href="/free-roof-inspection" data-cta="callbar">${ICON.home}Free Inspection</a></div>
-<a class="sticky-cta" href="/free-roof-inspection" data-cta="sticky">${ICON.clipboard}<span>Get a Free Inspection</span></a>`;
+<div class="callbar"><a href="tel:${site.phoneE164}" data-cta="callbar">${ICON.phone}Call</a><a href="/free-roof-estimate" data-cta="callbar">${ICON.home}Free Estimate</a></div>
+<a class="sticky-cta" href="/free-roof-estimate" data-cta="sticky">${ICON.clipboard}<span>Get a Free Estimate</span></a>`;
 }
 
 function breadcrumbs(items) {
@@ -113,16 +113,16 @@ function sectionsBlock(sections, opts = {}) {
 function quoteForm(site, opts = {}) {
   const kind = opts.kind || 'quote';
   const id = opts.id || 'quote-form';
-  const title = opts.title || 'Get a free roof inspection';
+  const title = opts.title || 'Get a free roof estimate';
   const intro = opts.intro || 'Tell us about the roof and attach a few photos if you have them. We reply within one business day with next steps.';
   const cityOpt = opts.city ? `<input type="hidden" name="city" value="${esc(opts.city)}">` : '';
   const svcOpt = opts.service ? `<input type="hidden" name="service" value="${esc(opts.service)}">` : '';
   return `<section class="sec-quote" id="quote"><div class="wrap split">
-<div class="reveal"><span class="eyebrow">Free Inspection</span><h2>${esc(title)}</h2><p class="lede">${esc(intro)}</p>
+<div class="reveal"><span class="eyebrow">Free Estimate</span><h2>${esc(title)}</h2><p class="lede">${esc(intro)}</p>
 <ul class="checks">
-<li>${ICON.check}<div><strong>Photo-documented.</strong> Every slope, penetration, and flashing detail photographed and explained.</div></li>
 <li>${ICON.check}<div><strong>Written, itemized.</strong> Materials, quantities, and schedule in writing before any work starts.</div></li>
-<li>${ICON.check}<div><strong>No pressure.</strong> If the roof does not need work, the report says so.</div></li></ul>
+<li>${ICON.check}<div><strong>Free, no obligation.</strong> The estimate for repair or replacement is free, and you are under no obligation to hire us.</div></li>
+<li>${ICON.check}<div><strong>Inspections are separate.</strong> A photo-documented <a href="/services/roof-inspections">roof inspection</a> carries a fee that we quote before we come out.</div></li></ul>
 <p class="call-line">Prefer to talk? <a href="tel:${site.phoneE164}" data-cta="form-call">${ICON.phone}Call ${esc(site.phone)}</a></p></div>
 <form class="form-card reveal" id="${id}" method="post" action="/api/lead" novalidate data-kind="${kind}">
 <div class="form-grid">
@@ -137,7 +137,7 @@ function quoteForm(site, opts = {}) {
 </div>
 <div class="hp" aria-hidden="true"><label for="${id}-cw">Company website</label><input id="${id}-cw" name="company_website" type="text" tabindex="-1" autocomplete="off"></div>
 <input type="hidden" name="started" value=""><input type="hidden" name="form_kind" value="${kind}">${cityOpt}${svcOpt}
-<button class="btn btn-copper" type="submit">${ICON.clipboard}Request my free inspection</button>
+<button class="btn btn-copper" type="submit">${ICON.clipboard}Request my free estimate</button>
 <p class="form-status" role="status" aria-live="polite"></p>
 <p class="form-note">No obligation. We never pay, waive, or rebate deductibles, as Colorado law requires.</p>
 </form></div></section>`;
@@ -145,8 +145,8 @@ function quoteForm(site, opts = {}) {
 
 function ctaBand(site, h2, p) {
   return `<section class="cta-band"><svg class="bg" viewBox="0 0 620 260" aria-hidden="true"><path d="M20 250 L310 40 L600 250" fill="none" stroke="#c4672f" stroke-width="18"/><path d="M120 250 L310 112 L500 250" fill="none" stroke="#ffffff" stroke-width="6" opacity=".35"/></svg><div class="wrap">
-<div><h2>${esc(h2 || 'The next storm is already forming.')}</h2><p>${esc(p || 'Find out what the last one did to your roof before the next one does worse. Free inspection, photos of everything we find.')}</p></div>
-<div class="ctas"><a class="btn btn-copper" href="/free-roof-inspection" data-cta="band">Book a free inspection</a><a class="btn btn-ghost" href="tel:${site.phoneE164}" data-cta="band-call">${ICON.phone}${esc(site.phone)}</a></div>
+<div><h2>${esc(h2 || 'The next storm is already forming.')}</h2><p>${esc(p || 'Find out what the last one did to your roof before the next one does worse. Free, written, itemized estimates for repair and replacement.')}</p></div>
+<div class="ctas"><a class="btn btn-copper" href="/free-roof-estimate" data-cta="band">Get a free estimate</a><a class="btn btn-ghost" href="tel:${site.phoneE164}" data-cta="band-call">${ICON.phone}${esc(site.phone)}</a></div>
 </div></section>`;
 }
 

@@ -196,6 +196,11 @@
       "source": "/roof-repair-cost-estimates-insurance-appraisal",
       "destination": "/casualty/appraisal-and-umpire-support",
       "permanent": true
+    },
+    {
+      "source": "/free-roof-inspection",
+      "destination": "/free-roof-estimate",
+      "permanent": true
     }
   ],
   "headers": [

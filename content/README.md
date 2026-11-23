@@ -8,13 +8,14 @@ Edit copy here, never in `dist/`. Run `node scripts/validate-content.js` after e
 - Never use an em dash or an en dash anywhere. Use a comma, a period, a colon, or the word "to".
 - No founder name, no biography, no personal background, no other company names. The site sells roofing only.
 - Do not invent credentials, awards, years in business, project counts, review counts, or star ratings.
-- Facts that are allowed because they are already established on the site: Standard Roofing Company, 1180 E 3rd St, Loveland, CO 80537; info@standardroofingcompany.net; (970) 469-8302; licensed and insured; hours Monday to Saturday 7am to 6pm; free inspections; Colorado law (C.R.S. 6-22-105) prohibits roofers from paying or waiving deductibles and we never do; written itemized estimates; photo-documented inspections.
+- Facts that are allowed because they are already established on the site: Standard Roofing Company, 1180 E 3rd St, Loveland, CO 80537; info@standardroofingcompany.net; (970) 469-8302; licensed and insured; hours Monday to Saturday 7am to 6pm; free written, itemized estimates for roof repair and roof replacement; Colorado law (C.R.S. 6-22-105) prohibits roofers from paying or waiving deductibles and we never do; written itemized estimates; photo-documented inspections.
+- Inspections always carry a fee: post-storm, hail, wind, pre-listing, pre-purchase, drone, and maintenance inspections, and the photo report from any of them. Never describe them as costing nothing. The only pricing statement allowed for inspections is that an inspection carries a fee that is quoted before we come out. The offer that costs nothing is the estimate: a free, no-obligation written estimate for roof repair or roof replacement. Calls to action say "Get a free estimate" or "Request a free estimate" and link to `/free-roof-estimate`.
 - Cost figures are framed as typical Colorado ranges, always with "varies by" language. Never promise a price.
 - Warranty talk describes what manufacturer and workmanship warranties typically cover and what to ask for. Do not state a specific company warranty term unless it is in `site.json`.
 - `html` fields may contain only these tags: `<p>`, `<ul>`, `<ol>`, `<li>`, `<strong>`, `<em>`, `<a href="...">`, `<h3>`, `<table>`, `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>`. No `<h1>` or `<h2>` inside `html` (section headings come from the `h2` field). No inline styles, no scripts, no images.
-- Internal links use clean site paths: `/services/metal-roofing`, `/roofing/fort-collins`, `/casualty/litigation-support`, `/blog/how-to-tell-if-your-roof-has-hail-damage-colorado`, `/free-roof-inspection`, `/contact`, `/financing`, `/warranty`, `/about`, `/gallery`, `/reviews`, `/services`, `/service-areas`, `/casualty`, `/blog`. Never link to `.html` files.
+- Internal links use clean site paths: `/services/metal-roofing`, `/services/roof-inspections`, `/roofing/fort-collins`, `/casualty/litigation-support`, `/blog/how-to-tell-if-your-roof-has-hail-damage-colorado`, `/free-roof-estimate`, `/contact`, `/financing`, `/warranty`, `/about`, `/gallery`, `/reviews`, `/services`, `/service-areas`, `/casualty`, `/blog`. Never link to `.html` files.
 - Titles: under 60 characters total INCLUDING the suffix ` | Standard Roofing Company` (26 characters). So the part you write must be 33 characters or fewer, keyword first.
-- Meta descriptions: 120 to 155 characters, contain the primary keyword, end with a call to action such as "Get a free inspection."
+- Meta descriptions: 120 to 155 characters, contain the primary keyword, end with a call to action such as "Get a free estimate."
 - Every page needs a `keywords` array: the primary keyword first, then 3 to 6 secondary keywords.
 
 ## site.json
@@ -130,4 +131,4 @@ Array of 12 post objects. Route: `/blog/<slug>`.
 
 ## pages.json
 
-Static page copy (about, financing, warranty, gallery, reviews, contact, free-roof-inspection, hubs). Same `sections` and `faq` shape.
+Static page copy (about, financing, warranty, gallery, reviews, contact, free-roof-estimate, hubs). Same `sections` and `faq` shape.

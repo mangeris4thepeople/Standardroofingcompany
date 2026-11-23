@@ -47,20 +47,20 @@ function cardFor(p) {
   if (p.startsWith('/roofing/')) { const c = cityBySlug[p.split('/')[2]]; if (c) return { href: p, title: `Roofing in ${c.name}`, text: c.summary }; }
   if (p.startsWith('/casualty/')) { const c = casBySlug[p.split('/')[2]]; if (c) return { href: p, title: c.name, text: c.summary }; }
   if (p.startsWith('/blog/')) { const b = postBySlug[p.split('/')[2]]; if (b) return { href: p, title: b.h1, text: b.excerpt }; }
-  const map = { '/free-roof-inspection': ['Free roof inspection', 'Photo-documented, written report, no obligation.'], '/financing': ['Roof financing', 'Pay over time, including the gap between a claim and an upgrade.'], '/warranty': ['Roofing warranties', 'What manufacturer and workmanship warranties cover.'], '/casualty': ['Casualty and litigation', 'Inspections, documentation, and opinions for attorneys and adjusters.'], '/contact': ['Contact', 'Call, email, or send the form.'] };
+  const map = { '/free-roof-estimate': ['Free roof estimate', 'Written, itemized, no obligation.'], '/financing': ['Roof financing', 'Pay over time, including the gap between a claim and an upgrade.'], '/warranty': ['Roofing warranties', 'What manufacturer and workmanship warranties cover.'], '/casualty': ['Casualty and litigation', 'Inspections, documentation, and opinions for attorneys and adjusters.'], '/contact': ['Contact', 'Call, email, or send the form.'] };
   if (map[p]) return { href: p, title: map[p][0], text: map[p][1] };
   return null;
 }
 
 function sideBox(extraHtml) {
-  return `<aside class="side">${extraHtml || ''}<div class="notice"><h3>Free inspection</h3><ul><li>Photo-documented, every slope</li><li>Written report and itemized estimate</li><li>No obligation, no deductible games</li></ul><p style="margin:14px 0 0"><a class="btn btn-copper" href="/free-roof-inspection" data-cta="side">Book now</a></p><p class="form-note" style="margin-top:12px">Or call <a href="tel:${site.phoneE164}">${esc(site.phone)}</a></p></div></aside>`;
+  return `<aside class="side">${extraHtml || ''}<div class="notice"><h3>Free estimate</h3><ul><li>Written and itemized</li><li>Materials, quantities, and schedule in writing</li><li>No obligation, no deductible games</li></ul><p style="margin:14px 0 0"><a class="btn btn-copper" href="/free-roof-estimate" data-cta="side">Get a free estimate</a></p><p class="form-note" style="margin-top:12px">Or call <a href="tel:${site.phoneE164}">${esc(site.phone)}</a></p></div></aside>`;
 }
 
 function pageHero(opts) {
   const crumbs = H.breadcrumbs(opts.crumbs);
   const meta = opts.meta ? `<ul class="hero-meta">${opts.meta.map((m) => `<li><strong>${esc(m[0])}</strong>${esc(m[1])}</li>`).join('')}</ul>` : '';
   const image = opts.image ? `<div class="hero-img">${H.img(opts.image, opts.imageAlt, { width: 1200, height: 800, eager: true })}</div>` : '';
-  return `<section class="page-hero"><div class="wrap${image ? ' hero-grid' : ''}"><div>${crumbs}<span class="eyebrow">${esc(opts.eyebrow)}</span><h1>${esc(opts.h1)}</h1><p class="lede">${esc(opts.lede)}</p>${meta}<div class="hero-ctas"><a class="btn btn-copper" href="${opts.ctaHref || '#quote'}" data-cta="hero">${H.ICON.clipboard}${esc(opts.cta || 'Get a free inspection')}</a><a class="btn btn-ghost" href="tel:${site.phoneE164}" data-cta="hero-call">${H.ICON.phone}Call ${esc(site.phone)}</a></div></div>${image}</div></section>`;
+  return `<section class="page-hero"><div class="wrap${image ? ' hero-grid' : ''}"><div>${crumbs}<span class="eyebrow">${esc(opts.eyebrow)}</span><h1>${esc(opts.h1)}</h1><p class="lede">${esc(opts.lede)}</p>${meta}<div class="hero-ctas"><a class="btn btn-copper" href="${opts.ctaHref || '#quote'}" data-cta="hero">${H.ICON.clipboard}${esc(opts.cta || 'Get a free estimate')}</a><a class="btn btn-ghost" href="tel:${site.phoneE164}" data-cta="hero-call">${H.ICON.phone}Call ${esc(site.phone)}</a></div></div>${image}</div></section>`;
 }
 
 const webPage = (route, name, description, type) => ({ '@type': type || 'WebPage', '@id': site.url + route + '#webpage', url: site.url + route, name, description, isPartOf: { '@id': site.url + '/#website' }, about: { '@id': site.url + '/#organization' }, inLanguage: 'en-US' });
@@ -82,7 +82,7 @@ const org = H.orgSchema(site, model);
 <span class="eyebrow">Loveland, Colorado | The Front Range hail belt</span>
 <h1>${esc(p.h1)}</h1>
 <p class="lede">${esc(p.lede)}</p>
-<div class="hero-ctas"><a class="btn btn-copper" href="/free-roof-inspection" data-cta="hero">${H.ICON.clipboard}Get a Free Inspection</a><a class="btn btn-ghost" href="tel:${site.phoneE164}" data-cta="hero-call">${H.ICON.phone}Call ${esc(site.phone)}</a></div>
+<div class="hero-ctas"><a class="btn btn-copper" href="/free-roof-estimate" data-cta="hero">${H.ICON.clipboard}Get a Free Estimate</a><a class="btn btn-ghost" href="tel:${site.phoneE164}" data-cta="hero-call">${H.ICON.phone}Call ${esc(site.phone)}</a></div>
 <ul class="hero-points"><li>${H.ICON.check}Written, itemized estimates</li><li>${H.ICON.check}Photo-documented inspections</li><li>${H.ICON.check}Class 4 impact-resistant options</li><li>${H.ICON.check}We never waive deductibles</li></ul>
 </div></section>
 ${H.trustStrip(site)}
@@ -92,7 +92,7 @@ ${H.cardGrid(repairs.map((s) => ({ href: `/services/${s.slug}`, title: s.name, t
 ${H.cardGrid(specialty.map((s) => ({ href: `/services/${s.slug}`, title: s.name, text: s.summary, cta: s.name, img: H.img(imgSvc(s.slug), `${s.name} illustration`, { width: 1200, height: 800 }) })))}
 <p style="text-align:center;margin-top:34px"><a class="btn btn-outline" href="/services">All roofing services</a></p></div></section>
 <section class="sec-cream"><div class="wrap"><div class="sec-head reveal"><span class="eyebrow">How It Works</span><h2>Five steps. No guesswork.</h2><p class="lede">Construction-grade closeout: a written scope, a photo record of every stage, and a final walk before the last invoice.</p></div>
-<div class="steps reveal"><div class="step"><h3>Inspect</h3><p>Free on-roof inspection. Every slope, penetration, and flashing detail photographed.</p></div><div class="step"><h3>Report</h3><p>A written condition report with photos and a clear recommendation, even if that is "no roof needed."</p></div><div class="step"><h3>Scope and Price</h3><p>Itemized estimate: materials, quantities, and schedule. Insurance scopes reviewed line by line once you sign with us.</p></div><div class="step"><h3>Build</h3><p>One accountable lead on site. Property protected, magnetic sweeps daily, crew briefed before work starts.</p></div><div class="step"><h3>Close Out</h3><p>Final walk, photo closeout package, warranty paperwork, and a clean yard.</p></div></div></div></section>
+<div class="steps reveal"><div class="step"><h3>Inspect</h3><p>On-roof inspection, with the fee quoted before we come out. Every slope, penetration, and flashing detail photographed.</p></div><div class="step"><h3>Report</h3><p>A written condition report with photos and a clear recommendation, even if that is "no roof needed."</p></div><div class="step"><h3>Scope and Price</h3><p>Free itemized estimate: materials, quantities, and schedule. Insurance scopes reviewed line by line once you sign with us.</p></div><div class="step"><h3>Build</h3><p>One accountable lead on site. Property protected, magnetic sweeps daily, crew briefed before work starts.</p></div><div class="step"><h3>Close Out</h3><p>Final walk, photo closeout package, warranty paperwork, and a clean yard.</p></div></div></div></section>
 <section><div class="wrap split"><div class="reveal"><span class="eyebrow">Why Standard</span><h2>Built by builders, not storm chasers.</h2><p class="lede">After every big hail storm, out-of-state crews flood the Front Range and leave when the claims dry up. We live here, we build here, and we answer the phone next year.</p>
 <ul class="checks"><li>${H.ICON.check}<div><strong>One project lead runs your job.</strong> Not a salesperson who disappears after you sign.</div></li><li>${H.ICON.check}<div><strong>Code and manufacturer spec.</strong> Ice and water shield, drip edge, ventilation, and fastening done to code and to the manufacturer's install requirements.</div></li><li>${H.ICON.check}<div><strong>Honest insurance help.</strong> We document the damage and, once you sign with us, meet your adjuster. You stay in control of your claim.</div></li><li>${H.ICON.check}<div><strong>Commercial-grade process.</strong> Written scope, real schedule, and photo closeout on every residential roof.</div></li></ul><a class="btn btn-outline" href="/about">How we work</a></div>
 <div class="reveal"><div class="hero-img">${H.img('/images/areas/front-range-1200.webp', 'Illustration of a shingle roof under a Front Range hail storm', { width: 1200, height: 800 })}</div></div></div></section>
@@ -113,7 +113,7 @@ function fmtDate(d) { const [y, m, day] = d.split('-').map(Number); return new D
   const p = model.pages.services;
   const route = '/services';
   const crumbs = [{ name: 'Home', href: '/' }, { name: 'Services' }];
-  const body = `${pageHero({ crumbs, eyebrow: 'What we do', h1: p.h1, lede: p.lede, image: '/images/services/roof-replacement-1200.webp', imageAlt: 'Roof replacement in progress, decking, underlayment, and new shingles', ctaHref: '/free-roof-inspection' })}
+  const body = `${pageHero({ crumbs, eyebrow: 'What we do', h1: p.h1, lede: p.lede, image: '/images/services/roof-replacement-1200.webp', imageAlt: 'Roof replacement in progress, decking, underlayment, and new shingles', ctaHref: '/free-roof-estimate' })}
 <section><div class="wrap"><div class="prose">${H.sectionsBlock(p.sections)}</div>
 <h2 style="margin-top:40px">Specialty roofing systems</h2>${H.cardGrid(model.services.filter((s) => s.eyebrow === 'Specialty Roofing' || ['metal-roofing', 'standing-seam-metal-roofing', 'slate-roofing', 'tile-roofing', 'cedar-shake-roofing', 'synthetic-roofing', 'roof-coatings'].includes(s.slug)).map((s) => ({ href: `/services/${s.slug}`, title: s.name, text: s.summary, cta: s.name, img: H.img(imgSvc(s.slug), `${s.name} illustration`, { width: 1200, height: 800 }) })))}
 <h2 style="margin-top:56px">Repairs, replacement, storms, and inspections</h2>${H.cardGrid(model.services.filter((s) => !['metal-roofing', 'standing-seam-metal-roofing', 'slate-roofing', 'tile-roofing', 'cedar-shake-roofing', 'synthetic-roofing', 'roof-coatings'].includes(s.slug)).map((s) => ({ href: `/services/${s.slug}`, title: s.name, text: s.summary, cta: s.name, img: H.img(imgSvc(s.slug), `${s.name} illustration`, { width: 1200, height: 800 }) })))}</div></section>
@@ -129,11 +129,11 @@ for (const s of model.services) {
   const related = s.related.map((r) => cardFor('/services/' + r)).filter(Boolean);
   const cityLinks = model.cities.slice(0, 10).map((c) => `<a href="/roofing/${c.slug}">${esc(c.name)}</a>`).join(', ');
   const body = `${pageHero({ crumbs, eyebrow: s.eyebrow, h1: s.h1, lede: s.lede, image: imgSvc(s.slug), imageAlt: `${s.name}: illustration of the roof system Standard Roofing Company installs in Colorado`, meta: [['Typical lifespan', s.lifespan], ['Cost framing', s.costRange]] })}
-<div class="facts"><div class="wrap"><div class="f"><strong>Lifespan</strong><span>${esc(s.lifespan)}</span></div><div class="f"><strong>Typical cost</strong><span>${esc(s.costRange)}</span></div><div class="f"><strong>Service area</strong><span>Northern Colorado and the mountains</span></div><div class="f"><strong>Inspection</strong><span>Free, photo-documented, written report</span></div></div></div>
+<div class="facts"><div class="wrap"><div class="f"><strong>Lifespan</strong><span>${esc(s.lifespan)}</span></div><div class="f"><strong>Typical cost</strong><span>${esc(s.costRange)}</span></div><div class="f"><strong>Service area</strong><span>Northern Colorado and the mountains</span></div><div class="f"><strong>Estimate</strong><span>Free, written, and itemized</span></div></div></div>
 <section class="sec-prose"><div class="wrap"><div class="prose">${H.sectionsBlock(s.sections)}<section class="prose-sec"><h2>Where we install ${esc(s.name.toLowerCase())}</h2><p>${cityLinks}, and the mountain towns. See all <a href="/service-areas">service areas</a>.</p></section></div>${sideBox(`<div class="notice"><h3>Related services</h3><ul>${s.related.map((r) => svcBySlug[r] ? `<li><a href="/services/${r}">${esc(svcBySlug[r].name)}</a></li>` : '').join('')}</ul></div>`)}</div></section>
 ${H.faqBlock(s.faq, `${s.name} questions`)}
 ${H.relatedLinks(related, 'Related roofing services')}
-${H.quoteForm(site, { service: s.name, title: `Get a free ${s.name.toLowerCase()} quote`, intro: 'Tell us about the roof, attach photos if you have them, and we will schedule an on-roof inspection and send a written, itemized estimate.' })}
+${H.quoteForm(site, s.slug === 'roof-inspections' ? { service: s.name, title: 'Request a roof inspection', intro: 'Tell us about the roof and what you need inspected, and attach photos if you have them. An inspection carries a fee, and we quote it before we come out.' } : { service: s.name, title: `Get a free ${s.name.toLowerCase()} estimate`, intro: 'Tell us about the roof, attach photos if you have them, and we will follow up to schedule your free, written, itemized estimate.' })}
 ${H.ctaBand(site)}`;
   const graph = [org, website, webPage(route, s.title + site.titleSuffix, s.description), H.breadcrumbSchema(site, crumbs),
     { '@type': 'Service', '@id': site.url + route + '#service', name: s.name, serviceType: s.serviceType, url: site.url + route, description: s.description, provider: { '@id': site.url + '/#organization' }, areaServed: org.areaServed, image: site.url + imgSvc(s.slug), offers: { '@type': 'Offer', priceCurrency: 'USD', description: s.costRange, availability: 'https://schema.org/InStock' } },
@@ -147,7 +147,7 @@ ${H.ctaBand(site)}`;
   const route = '/service-areas';
   const crumbs = [{ name: 'Home', href: '/' }, { name: 'Service Areas' }];
   const list = (arr) => `<ul class="hub-list">${arr.map((c) => `<li><a href="/roofing/${c.slug}">Roofing in ${esc(c.name)}, CO</a><span>${esc(c.county)}, ${c.elevationFt.toLocaleString('en-US')} ft</span></li>`).join('')}</ul>`;
-  const body = `${pageHero({ crumbs, eyebrow: 'Where we work', h1: p.h1, lede: p.lede, image: '/images/areas/mountain-1200.webp', imageAlt: 'Standing seam metal roof with snow in the Colorado mountains', ctaHref: '/free-roof-inspection' })}
+  const body = `${pageHero({ crumbs, eyebrow: 'Where we work', h1: p.h1, lede: p.lede, image: '/images/areas/mountain-1200.webp', imageAlt: 'Standing seam metal roof with snow in the Colorado mountains', ctaHref: '/free-roof-estimate' })}
 <section><div class="wrap"><div class="prose">${H.sectionsBlock(p.sections)}</div>
 <div class="grid g2" style="margin-top:40px"><div><h2>Northern Colorado</h2>${list(model.cities.filter((c) => c.region === 'northern-colorado'))}</div><div><h2>Mountain towns</h2>${list(model.cities.filter((c) => c.region === 'mountain'))}</div></div></div></section>
 ${H.quoteForm(site)}${H.ctaBand(site)}`;
@@ -167,7 +167,7 @@ for (const c of model.cities) {
 <section class="sec-prose"><div class="wrap"><div class="prose">${H.sectionsBlock(c.sections)}</div>${sideBox(`<div class="notice"><h3>Services in ${esc(c.name)}</h3><ul>${c.relatedServices.map((r) => svcBySlug[r] ? `<li><a href="/services/${r}">${esc(svcBySlug[r].name)}</a></li>` : '').join('')}</ul></div><div class="notice"><h3>Nearby</h3><ul>${neighbors}</ul></div>`)}</div></section>
 ${H.faqBlock(c.faq, `Roofing in ${c.name}: questions`)}
 ${H.relatedLinks(related, `Roofing services in ${c.name}`)}
-${H.quoteForm(site, { city: c.name, title: `Free roof inspection in ${c.name}`, intro: `Request an on-roof, photo-documented inspection anywhere in ${c.name} and ${c.county}. Written report, itemized estimate, no obligation.` })}
+${H.quoteForm(site, { city: c.name, title: `Free roof estimate in ${c.name}`, intro: `Request a free, written, itemized estimate for roof repair or replacement anywhere in ${c.name} and ${c.county}. No obligation.` })}
 ${H.ctaBand(site, `Roof trouble in ${c.name}?`, 'Hail, wind, snow, or just age: find out what your roof needs before the next storm decides for you.')}`;
   const graph = [org, website, webPage(route, c.title + site.titleSuffix, c.description), H.breadcrumbSchema(site, crumbs),
     { '@type': 'Service', '@id': site.url + route + '#service', name: c.serviceName || `Roofing services in ${c.name}, CO`, serviceType: c.serviceType || 'Roofing contractor', url: site.url + route, description: c.description, provider: { '@id': site.url + '/#organization' }, areaServed: { '@type': 'City', name: `${c.name}, CO`, geo: { '@type': 'GeoCoordinates', latitude: c.lat, longitude: c.lng }, containedInPlace: { '@type': 'AdministrativeArea', name: c.county } } },
@@ -229,7 +229,7 @@ function attorneyForm() {
   const route = '/blog';
   const crumbs = [{ name: 'Home', href: '/' }, { name: 'Blog' }];
   const cards = model.blog.map((b) => `<article class="card reveal"><span class="cat-pill">${esc(b.category)}</span><time datetime="${b.datePublished}">${fmtDate(b.datePublished)}</time><h3><a href="/blog/${b.slug}">${esc(b.h1)}</a></h3><p>${esc(b.excerpt)}</p><a class="more" href="/blog/${b.slug}">Read: ${esc(b.h1.length > 48 ? b.h1.slice(0, 46) + '...' : b.h1)}</a></article>`).join('');
-  const body = `${pageHero({ crumbs, eyebrow: 'Guides', h1: p.h1, lede: p.lede, ctaHref: '/free-roof-inspection' })}
+  const body = `${pageHero({ crumbs, eyebrow: 'Guides', h1: p.h1, lede: p.lede, ctaHref: '/free-roof-estimate' })}
 <section><div class="wrap"><div class="grid g3 post-list">${cards}</div></div></section>${H.ctaBand(site)}`;
   const graph = [org, website, webPage(route, p.title + site.titleSuffix, p.description, 'CollectionPage'), H.breadcrumbSchema(site, crumbs), { '@type': 'Blog', '@id': site.url + '/blog#blog', url: site.url + '/blog', name: site.name + ' blog', publisher: { '@id': site.url + '/#organization' }, blogPost: model.blog.map((b) => ({ '@type': 'BlogPosting', headline: b.h1, url: `${site.url}/blog/${b.slug}`, datePublished: b.datePublished })) }];
   render(route, { title: p.title, description: p.description, body, current: '/blog', ogImage: '/images/og/blog.png', graph }, { priority: '0.7', changefreq: 'weekly' });
@@ -257,7 +257,7 @@ ${H.quoteForm(site)}`;
 function simplePage(key, route, opts) {
   const p = model.pages[key];
   const crumbs = [{ name: 'Home', href: '/' }, { name: opts.crumb || p.h1 }];
-  const body = `${pageHero({ crumbs, eyebrow: opts.eyebrow, h1: p.h1, lede: p.lede, image: opts.image, imageAlt: opts.imageAlt, ctaHref: opts.ctaHref || '/free-roof-inspection' })}
+  const body = `${pageHero({ crumbs, eyebrow: opts.eyebrow, h1: p.h1, lede: p.lede, image: opts.image, imageAlt: opts.imageAlt, ctaHref: opts.ctaHref || '/free-roof-estimate' })}
 <section class="sec-prose${opts.side ? '' : ' single'}"><div class="wrap"><div class="prose">${H.sectionsBlock(p.sections || [])}${opts.extra || ''}</div>${opts.side ? sideBox() : ''}</div></section>
 ${p.faq ? H.faqBlock(p.faq) : ''}${opts.form === false ? '' : H.quoteForm(site)}${H.ctaBand(site)}`;
   const graph = [org, website, webPage(route, p.title + site.titleSuffix, p.description, opts.type), H.breadcrumbSchema(site, crumbs)].concat(p.faq ? [H.faqSchema(p.faq)] : []).concat(opts.graph || []);
@@ -296,24 +296,24 @@ ${H.quoteForm(site, { title: 'Send us the details' })}${H.ctaBand(site)}`;
   render(route, { title: p.title, description: p.description, body, current: '/contact', ogImage: '/images/og/contact.png', graph }, { priority: '0.8', changefreq: 'monthly' });
 })();
 
-// Free roof inspection lead page
-(function freeInspection() {
-  const p = model.pages['free-roof-inspection'];
-  const route = '/free-roof-inspection';
-  const crumbs = [{ name: 'Home', href: '/' }, { name: 'Free Roof Inspection' }];
-  const body = `${pageHero({ crumbs, eyebrow: 'No obligation', h1: p.h1, lede: p.lede, image: imgSvc('roof-inspections'), imageAlt: 'Roof inspection illustration with magnifier over shingles', ctaHref: '#quote', cta: 'Request my inspection' })}
+// Free roof estimate lead page
+(function freeEstimate() {
+  const p = model.pages['free-roof-estimate'];
+  const route = '/free-roof-estimate';
+  const crumbs = [{ name: 'Home', href: '/' }, { name: 'Free Roof Estimate' }];
+  const body = `${pageHero({ crumbs, eyebrow: 'No obligation', h1: p.h1, lede: p.lede, image: imgSvc('roof-replacement'), imageAlt: 'Roof replacement layers: decking, underlayment, and shingles', ctaHref: '#quote', cta: 'Request my estimate' })}
 ${H.trustStrip(site)}
-${H.quoteForm(site, { id: 'inspection-form', title: 'Request your free inspection', intro: 'Fill this in and we call within one business day to schedule. Add photos if you have them; they help us prioritize storm damage.' })}
+${H.quoteForm(site, { id: 'inspection-form', title: 'Request your free estimate', intro: 'Fill this in and we call within one business day to schedule. Add photos if you have them; they help us prioritize storm damage.' })}
 <section class="sec-prose single" style="padding-top:0"><div class="wrap"><div class="prose">${H.sectionsBlock(p.sections)}</div></div></section>
-${H.faqBlock(p.faq, 'Free inspection questions')}${H.ctaBand(site)}`;
-  const graph = [org, website, webPage(route, p.title + site.titleSuffix, p.description), H.breadcrumbSchema(site, crumbs), { '@type': 'Service', '@id': site.url + route + '#service', name: 'Free roof inspection', serviceType: 'Roof inspection', url: site.url + route, description: p.description, provider: { '@id': site.url + '/#organization' }, areaServed: org.areaServed, offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } }, H.faqSchema(p.faq)];
-  render(route, { title: p.title, description: p.description, body, current: route, ogImage: '/images/og/free-roof-inspection.png', preloadImage: imgSvc('roof-inspections'), graph }, { priority: '0.9', changefreq: 'monthly' });
+${H.faqBlock(p.faq, 'Free estimate questions')}${H.ctaBand(site)}`;
+  const graph = [org, website, webPage(route, p.title + site.titleSuffix, p.description), H.breadcrumbSchema(site, crumbs), { '@type': 'Service', '@id': site.url + route + '#service', name: 'Free roof estimate', serviceType: 'Roof repair and replacement estimate', url: site.url + route, description: p.description, provider: { '@id': site.url + '/#organization' }, areaServed: org.areaServed, offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } }, H.faqSchema(p.faq)];
+  render(route, { title: p.title, description: p.description, body, current: route, ogImage: '/images/og/free-roof-estimate.png', preloadImage: imgSvc('roof-replacement'), graph }, { priority: '0.9', changefreq: 'monthly' });
 })();
 
 // 404
 (function notFound() {
   const p = model.pages['404'];
-  const links = [['/services', 'Roofing services'], ['/service-areas', 'Service areas'], ['/services/hail-damage-roof-repair', 'Hail damage repair'], ['/casualty', 'Attorneys and adjusters'], ['/blog', 'Guides'], ['/free-roof-inspection', 'Free inspection'], ['/contact', 'Contact']];
+  const links = [['/services', 'Roofing services'], ['/service-areas', 'Service areas'], ['/services/hail-damage-roof-repair', 'Hail damage repair'], ['/casualty', 'Attorneys and adjusters'], ['/blog', 'Guides'], ['/free-roof-estimate', 'Free estimate'], ['/contact', 'Contact']];
   const body = `<section class="notfound"><div class="wrap"><span class="eyebrow">404</span><h1>${esc(p.h1)}</h1><p class="lede">${esc(p.lede)}</p><div class="areas" style="justify-content:center">${links.map(([h, t]) => `<span><a href="${h}">${esc(t)}</a></span>`).join('')}</div><p style="margin-top:34px"><a class="btn btn-copper" href="/">Back to the home page</a></p></div></section>`;
   render('/404', { title: p.title, description: p.description, body, noindex: true, ogImage: '/images/og/404.png', graph: [org, website, webPage('/404', p.title + site.titleSuffix, p.description)] }, { noindex: true });
 })();
@@ -327,7 +327,7 @@ const llms = `# ${site.name}
 
 > Licensed and insured roofing contractor in Loveland, Colorado serving Northern Colorado (Loveland, Fort Collins, Greeley, Windsor, Berthoud, Longmont, Johnstown, Wellington, Timnath, Estes Park) and Colorado mountain towns (Nederland, Winter Park, Granby, Grand Lake, Steamboat Springs, Breckenridge, Frisco, Silverthorne, Vail, Red Feather Lakes, Glen Haven, Drake). Residential and commercial roofing with a specialty focus on metal, standing seam, slate, tile, cedar shake, synthetic, and roof coatings, plus roof repair, hail and storm damage, insurance claim roofing, inspections, and a casualty and litigation group serving attorneys, public adjusters, and carriers.
 
-Business facts (use verbatim): ${site.name}, ${site.address.street}, ${site.address.city}, ${site.address.state} ${site.address.zip}. Phone ${site.phone}. Email ${site.email}. Hours ${site.hoursDisplay}. Free, photo-documented roof inspections. Written itemized estimates. Colorado law (C.R.S. 6-22-105) prohibits roofers from paying or waiving insurance deductibles and the company never does. The company does not act as a public adjuster.
+Business facts (use verbatim): ${site.name}, ${site.address.street}, ${site.address.city}, ${site.address.state} ${site.address.zip}. Phone ${site.phone}. Email ${site.email}. Hours ${site.hoursDisplay}. Free written, itemized estimates for roof repair and roof replacement. Roof inspections are photo-documented and carry a fee that is quoted before the company comes out. Colorado law (C.R.S. 6-22-105) prohibits roofers from paying or waiving insurance deductibles and the company never does. The company does not act as a public adjuster.
 
 ## Services
 ${model.services.map((s) => `- [${s.name}](${site.url}/services/${s.slug}): ${s.summary}`).join('\n')}
@@ -343,7 +343,7 @@ ${(model.casualty.pages || []).map((p) => `- [${p.name}](${site.url}/casualty/${
 ${model.blog.map((b) => `- [${b.h1}](${site.url}/blog/${b.slug}): ${b.excerpt}`).join('\n')}
 
 ## Other pages
-- [Free roof inspection](${site.url}/free-roof-inspection)
+- [Free roof estimate](${site.url}/free-roof-estimate)
 - [About](${site.url}/about)
 - [Financing](${site.url}/financing)
 - [Warranty](${site.url}/warranty)

@@ -8,7 +8,7 @@ Static site generated from JSON content. No framework; Node 20, one dev dependen
 
 | Path | What |
 | --- | --- |
-| `content/*.json` | All copy. `site.json` holds business facts (phone, address, hours, nav). `services.json` (14), `cities.json` (22), `casualty.json` (landing + 7), `blog.json` (12), `pages.json` (home, hubs, about, financing, warranty, gallery, reviews, contact, free inspection, 404). Rules in `content/README.md`. |
+| `content/*.json` | All copy. `site.json` holds business facts (phone, address, hours, nav). `services.json` (14), `cities.json` (22), `casualty.json` (landing + 7), `blog.json` (12), `pages.json` (home, hubs, about, financing, warranty, gallery, reviews, contact, free estimate, 404). Rules in `content/README.md`. |
 | `scripts/build.js` | Generates `dist/`: clean routes, metadata, JSON-LD, sitemap.xml, robots.txt, feed.xml, llms.txt, 404.html. |
 | `scripts/lib/` | `content.js` (loader), `html.js` (components, layout, schema builders). |
 | `scripts/images.js` | Draws every illustration, OG card, and the logo from SVG and writes WebP/PNG to `public/images/`. Outputs are committed; rerun only after changing art or adding pages. |
@@ -36,7 +36,7 @@ Vercel runs `npm run build` and serves `dist/`.
 ## Editing copy
 
 Edit the JSON in `content/`, run `npm run build`, commit, push to `main`. Never edit `dist/`.
-Rules worth repeating: no em dashes anywhere, no people or other companies, titles 33 characters or fewer (the suffix is added), descriptions 120 to 155 characters with a call to action. The validator will tell you exactly what to fix.
+Rules worth repeating: no em dashes anywhere, inspections always carry a fee quoted before we come out (the free offer is the written estimate for repair or replacement), no people or other companies, titles 33 characters or fewer (the suffix is added), descriptions 120 to 155 characters with a call to action. The validator will tell you exactly what to fix.
 
 Adding a blog post: append an object to `content/blog.json` (copy the shape of an existing one), run `npm run images` so it gets an OG card, build, push. It appears in the blog index, the home page, the sitemap, feed.xml, and llms.txt automatically.
 
