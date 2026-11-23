@@ -115,6 +115,7 @@ function quoteForm(site, opts = {}) {
   const id = opts.id || 'quote-form';
   const title = opts.title || 'Get a free roof estimate';
   const eyebrow = opts.eyebrow || 'Free Estimate';
+  const submitLabel = opts.submitLabel || 'Request my free estimate';
   const intro = opts.intro || 'Tell us about the roof and attach a few photos if you have them. We reply within one business day with next steps.';
   const cityOpt = opts.city ? `<input type="hidden" name="city" value="${esc(opts.city)}">` : '';
   const svcOpt = opts.service ? `<input type="hidden" name="service" value="${esc(opts.service)}">` : '';
@@ -138,7 +139,7 @@ function quoteForm(site, opts = {}) {
 </div>
 <div class="hp" aria-hidden="true"><label for="${id}-cw">Company website</label><input id="${id}-cw" name="company_website" type="text" tabindex="-1" autocomplete="off"></div>
 <input type="hidden" name="started" value=""><input type="hidden" name="form_kind" value="${kind}">${cityOpt}${svcOpt}
-<button class="btn btn-copper" type="submit">${ICON.clipboard}Request my free estimate</button>
+<button class="btn btn-copper" type="submit">${ICON.clipboard}${esc(submitLabel)}</button>
 <p class="form-status" role="status" aria-live="polite"></p>
 <p class="form-note">No obligation. We never pay, waive, or rebate deductibles, as Colorado law requires.</p>
 </form></div></section>`;
