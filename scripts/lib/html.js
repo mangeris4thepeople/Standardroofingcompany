@@ -123,8 +123,8 @@ function quoteForm(site, opts = {}) {
 <div class="reveal"><span class="eyebrow">${esc(eyebrow)}</span><h2>${esc(title)}</h2><p class="lede">${esc(intro)}</p>
 <ul class="checks">
 <li>${ICON.check}<div><strong>Written, itemized.</strong> Materials, quantities, and schedule in writing before any work starts.</div></li>
-<li>${ICON.check}<div><strong>Free, no obligation.</strong> The estimate for repair or replacement is free, and you are under no obligation to hire us.</div></li>
-<li>${ICON.check}<div><strong>Inspections are separate.</strong> A storm <a href="/services/roof-inspections">roof inspection</a> is $49.99 when no damage is found. Full damage inspections are $300 to $500, billed to the insurance company.</div></li></ul>
+<li>${ICON.check}<div><strong>Free, no obligation.</strong> The estimate for a new roof or a roof replacement is free, and you are under no obligation to hire us.</div></li>
+<li>${ICON.check}<div><strong>Inspections are separate.</strong> Every <a href="/services/roof-inspections">roof inspection</a> carries a cost, assessed before any work is performed.</div></li></ul>
 <p class="call-line">Prefer to talk? <a href="tel:${site.phoneE164}" data-cta="form-call">${ICON.phone}Call ${esc(site.phone)}</a></p></div>
 <form class="form-card reveal" id="${id}" method="post" action="/api/lead" novalidate data-kind="${kind}">
 <div class="form-grid">
@@ -147,7 +147,7 @@ function quoteForm(site, opts = {}) {
 
 function ctaBand(site, h2, p) {
   return `<section class="cta-band"><svg class="bg" viewBox="0 0 620 260" aria-hidden="true"><path d="M20 250 L310 40 L600 250" fill="none" stroke="#c4672f" stroke-width="18"/><path d="M120 250 L310 112 L500 250" fill="none" stroke="#ffffff" stroke-width="6" opacity=".35"/></svg><div class="wrap">
-<div><h2>${esc(h2 || 'The next storm is already forming.')}</h2><p>${esc(p || 'Find out what the last one did to your roof before the next one does worse. Free, written, itemized estimates for repair and replacement.')}</p></div>
+<div><h2>${esc(h2 || 'The next storm is already forming.')}</h2><p>${esc(p || 'Find out what the last one did to your roof before the next one does worse. Free, written, itemized estimates for a new roof or a roof replacement.')}</p></div>
 <div class="ctas"><a class="btn btn-copper" href="/free-roof-estimate" data-cta="band">Get a free estimate</a><a class="btn btn-ghost" href="tel:${site.phoneE164}" data-cta="band-call">${ICON.phone}${esc(site.phone)}</a></div>
 </div></section>`;
 }
