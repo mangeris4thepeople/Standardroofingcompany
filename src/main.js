@@ -127,7 +127,7 @@
       }).catch(function (err) {
         var body = Object.keys(data).filter(function (k) { return data[k] && k !== "photos" && k !== "started" && k !== "referrer"; }).map(function (k) { return k.replace(/_/g, " ") + ": " + data[k]; }).join("\n");
         lead("sms");
-        show((err && err.message && err.message !== "not delivered" ? err.message + " " : "") + "We could not send that just now. Your messages app should open with the request filled in; if not, call or text " + CONFIG.PHONE_DISPLAY + ".", true);
+        show((err && err.message && err.message !== "not delivered" ? err.message + " " : "") + "We could not send that just now. Your messages app should open with the request filled in; if not, call " + CONFIG.PHONE_DISPLAY + ".", true);
         window.location.href = "sms:" + CONFIG.SMS_NUMBER + "?&body=" + encodeURIComponent("Roof inspection request\n" + body);
       }).then(function () { if (btn) btn.disabled = false; });
     });

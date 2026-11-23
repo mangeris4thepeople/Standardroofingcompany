@@ -123,7 +123,7 @@ function quoteForm(site, opts = {}) {
 <li>${ICON.check}<div><strong>Photo-documented.</strong> Every slope, penetration, and flashing detail photographed and explained.</div></li>
 <li>${ICON.check}<div><strong>Written, itemized.</strong> Materials, quantities, and schedule in writing before any work starts.</div></li>
 <li>${ICON.check}<div><strong>No pressure.</strong> If the roof does not need work, the report says so.</div></li></ul>
-<p class="call-line">Prefer to talk? <a href="tel:${site.phoneE164}" data-cta="form-call">${ICON.phone}Call or text ${esc(site.phone)}</a></p></div>
+<p class="call-line">Prefer to talk? <a href="tel:${site.phoneE164}" data-cta="form-call">${ICON.phone}Call ${esc(site.phone)}</a></p></div>
 <form class="form-card reveal" id="${id}" method="post" action="/api/lead" novalidate data-kind="${kind}">
 <div class="form-grid">
 <div><label for="${id}-name">Name</label><input id="${id}-name" name="name" type="text" autocomplete="name" required></div>

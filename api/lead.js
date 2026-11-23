@@ -28,7 +28,7 @@ module.exports = async (req, res) => {
   if (started && Date.now() - started < 3000) return res.status(200).json({ ok: true });
   const ip = clientIp(req);
   if (rateLimited('ip:' + ip, 5, 10 * 60 * 1000) || rateLimited('global', 60, 60 * 1000)) {
-    return res.status(429).json({ ok: false, error: 'Too many requests. Please call or text ' + PHONE + '.' });
+    return res.status(429).json({ ok: false, error: 'Too many requests. Please call ' + PHONE + '.' });
   }
 
   const name = clean(b.name, 120);
@@ -83,7 +83,7 @@ module.exports = async (req, res) => {
   }
   if (leadId && emailed) { try { await sql('UPDATE leads SET emailed=true WHERE id=$1', [leadId]); } catch (e) {} }
 
-  if (!emailed && !leadId) return res.status(502).json({ ok: false, error: 'We could not send that just now. Please call or text ' + PHONE + '.' });
+  if (!emailed && !leadId) return res.status(502).json({ ok: false, error: 'We could not send that just now. Please call ' + PHONE + '.' });
   // When the server relay is refused (FormSubmit only accepts browser posts), the page sends the
   // email itself with the stored photo links; the lead is already saved either way.
   return res.status(200).json({ ok: true, id: leadId, emailed, emailError: emailError || undefined, subject, fields, photos: photoLinks, relay: emailed ? undefined : 'https://formsubmit.co/ajax/' + LEAD_INBOX_ALIAS });
