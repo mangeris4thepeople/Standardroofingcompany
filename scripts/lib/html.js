@@ -114,11 +114,12 @@ function quoteForm(site, opts = {}) {
   const kind = opts.kind || 'quote';
   const id = opts.id || 'quote-form';
   const title = opts.title || 'Get a free roof estimate';
+  const eyebrow = opts.eyebrow || 'Free Estimate';
   const intro = opts.intro || 'Tell us about the roof and attach a few photos if you have them. We reply within one business day with next steps.';
   const cityOpt = opts.city ? `<input type="hidden" name="city" value="${esc(opts.city)}">` : '';
   const svcOpt = opts.service ? `<input type="hidden" name="service" value="${esc(opts.service)}">` : '';
   return `<section class="sec-quote" id="quote"><div class="wrap split">
-<div class="reveal"><span class="eyebrow">Free Estimate</span><h2>${esc(title)}</h2><p class="lede">${esc(intro)}</p>
+<div class="reveal"><span class="eyebrow">${esc(eyebrow)}</span><h2>${esc(title)}</h2><p class="lede">${esc(intro)}</p>
 <ul class="checks">
 <li>${ICON.check}<div><strong>Written, itemized.</strong> Materials, quantities, and schedule in writing before any work starts.</div></li>
 <li>${ICON.check}<div><strong>Free, no obligation.</strong> The estimate for repair or replacement is free, and you are under no obligation to hire us.</div></li>
