@@ -47,7 +47,7 @@ function cardFor(p) {
   if (p.startsWith('/roofing/')) { const c = cityBySlug[p.split('/')[2]]; if (c) return { href: p, title: `Roofing in ${c.name}`, text: c.summary }; }
   if (p.startsWith('/casualty/')) { const c = casBySlug[p.split('/')[2]]; if (c) return { href: p, title: c.name, text: c.summary }; }
   if (p.startsWith('/blog/')) { const b = postBySlug[p.split('/')[2]]; if (b) return { href: p, title: b.h1, text: b.excerpt }; }
-  const map = { '/free-roof-inspection': ['Free roof inspection', 'Photo-documented, written report, no obligation.'], '/financing': ['Roof financing', 'Pay over time, including the gap between a claim and an upgrade.'], '/warranty': ['Roofing warranties', 'What manufacturer and workmanship warranties cover.'], '/casualty': ['Casualty and litigation', 'Inspections, documentation, and opinions for attorneys and adjusters.'], '/contact': ['Contact', 'Call, text, email, or send the form.'] };
+  const map = { '/free-roof-inspection': ['Free roof inspection', 'Photo-documented, written report, no obligation.'], '/financing': ['Roof financing', 'Pay over time, including the gap between a claim and an upgrade.'], '/warranty': ['Roofing warranties', 'What manufacturer and workmanship warranties cover.'], '/casualty': ['Casualty and litigation', 'Inspections, documentation, and opinions for attorneys and adjusters.'], '/contact': ['Contact', 'Call, email, or send the form.'] };
   if (map[p]) return { href: p, title: map[p][0], text: map[p][1] };
   return null;
 }
