@@ -170,7 +170,7 @@ ${H.relatedLinks(related, `Roofing services in ${c.name}`)}
 ${H.quoteForm(site, { city: c.name, title: `Free roof inspection in ${c.name}`, intro: `Request an on-roof, photo-documented inspection anywhere in ${c.name} and ${c.county}. Written report, itemized estimate, no obligation.` })}
 ${H.ctaBand(site, `Roof trouble in ${c.name}?`, 'Hail, wind, snow, or just age: find out what your roof needs before the next storm decides for you.')}`;
   const graph = [org, website, webPage(route, c.title + site.titleSuffix, c.description), H.breadcrumbSchema(site, crumbs),
-    { '@type': 'Service', '@id': site.url + route + '#service', name: `Roofing services in ${c.name}, CO`, serviceType: 'Roofing contractor', url: site.url + route, description: c.description, provider: { '@id': site.url + '/#organization' }, areaServed: { '@type': 'City', name: `${c.name}, CO`, geo: { '@type': 'GeoCoordinates', latitude: c.lat, longitude: c.lng }, containedInPlace: { '@type': 'AdministrativeArea', name: c.county } } },
+    { '@type': 'Service', '@id': site.url + route + '#service', name: c.serviceName || `Roofing services in ${c.name}, CO`, serviceType: c.serviceType || 'Roofing contractor', url: site.url + route, description: c.description, provider: { '@id': site.url + '/#organization' }, areaServed: { '@type': 'City', name: `${c.name}, CO`, geo: { '@type': 'GeoCoordinates', latitude: c.lat, longitude: c.lng }, containedInPlace: { '@type': 'AdministrativeArea', name: c.county } } },
     H.faqSchema(c.faq)];
   render(route, { title: c.title, description: c.description, body, current: '/service-areas', ogImage: `/images/og/city-${c.slug}.png`, preloadImage: img, graph }, { priority: '0.8', changefreq: 'monthly' });
 }

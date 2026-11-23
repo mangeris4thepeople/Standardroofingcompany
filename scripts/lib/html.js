@@ -57,7 +57,7 @@ function img(src, alt, opts = {}) {
 function header(site, current) {
   const links = site.nav.map((n) => `<a href="${n.href}"${current === n.href ? ' aria-current="page"' : ''}>${esc(n.label)}</a>`).join('');
   return `<a class="skip" href="#main">Skip to content</a>
-<div class="topbar"><div class="wrap"><span class="tb-left"><i class="dot"></i>Northern Colorado and mountain roofing | Licensed and insured | Free inspections</span><a href="tel:${site.phoneE164}" data-cta="call">${ICON.phone}Call or text ${esc(site.phone)}</a></div></div>
+<div class="topbar"><div class="wrap"><span class="tb-left"><i class="dot"></i>Northern Colorado and mountain roofing | Licensed and insured | Free inspections</span><a href="tel:${site.phoneE164}" data-cta="call">${ICON.phone}Call ${esc(site.phone)}</a></div></div>
 <header class="site-header"><div class="wrap">
 <a class="brand" href="/" aria-label="Standard Roofing Company home">${lockup()}</a>
 <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">${ICON.menu}</button>
