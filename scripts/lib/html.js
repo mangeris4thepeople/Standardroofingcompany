@@ -124,7 +124,7 @@ function quoteForm(site, opts = {}) {
 <ul class="checks">
 <li>${ICON.check}<div><strong>Written, itemized.</strong> Materials, quantities, and schedule in writing before any work starts.</div></li>
 <li>${ICON.check}<div><strong>Free, no obligation.</strong> The estimate for repair or replacement is free, and you are under no obligation to hire us.</div></li>
-<li>${ICON.check}<div><strong>Inspections are separate.</strong> A photo-documented <a href="/services/roof-inspections">roof inspection</a> carries a fee that we quote before we come out.</div></li></ul>
+<li>${ICON.check}<div><strong>Inspections are separate.</strong> A post-storm <a href="/services/roof-inspections">roof inspection</a> is $49.99; other inspections carry a fee that we quote before we come out.</div></li></ul>
 <p class="call-line">Prefer to talk? <a href="tel:${site.phoneE164}" data-cta="form-call">${ICON.phone}Call ${esc(site.phone)}</a></p></div>
 <form class="form-card reveal" id="${id}" method="post" action="/api/lead" novalidate data-kind="${kind}">
 <div class="form-grid">
