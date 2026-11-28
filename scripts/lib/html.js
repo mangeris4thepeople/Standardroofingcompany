@@ -81,7 +81,7 @@ function footer(site, model) {
 <div><h2 class="foot-h">Mountain Towns</h2><ul>${mtn}<li><a href="/service-areas">All service areas</a></li></ul></div>
 <div><h2 class="foot-h">Attorneys and Adjusters</h2><ul><li><a href="/casualty">Casualty and litigation</a></li>${cas}</ul></div>
 <div><h2 class="foot-h">Company</h2><ul>
-<li><a href="/about">About</a></li><li><a href="/free-roof-estimate">Free roof estimate</a></li><li><a href="/financing">Financing</a></li><li><a href="/warranty">Warranty</a></li><li><a href="/gallery">Gallery</a></li><li><a href="/reviews">Reviews</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div>
+<li><a href="/about">About</a></li><li><a href="/free-roof-estimate">Free roof estimate</a></li><li><a href="/financing">Financing</a></li><li><a href="/warranty">Warranty</a></li><li><a href="/gallery">Gallery</a></li><li><a href="/reviews">Reviews</a></li><li><a href="/blog">Blog</a></li><li><a href="/faq">FAQ</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy">Privacy</a></li></ul></div>
 </div>
 <div class="sister"><strong>Full service, residential to commercial.</strong> Homes are designed and built by <a href="https://www.standardbuildingcompany.net/" rel="noopener">Standard Building Company</a>. Commercial projects are developed and built by <a href="https://standarddevelopmentcompany.com/" rel="noopener">Standard Development Company</a>. And the roof on top of it all comes from us, Standard Roofing Company. And the websites and data tools behind it all are built by <a href="https://standarddatacompany.net/" rel="noopener">Standard Data Company</a>.</div>
 <div class="legal"><span>&copy; <span data-year>2026</span> ${esc(site.name)}. All rights reserved.</span><span>Colorado law (C.R.S. 6-22-105) prohibits roofing contractors from paying, waiving, or rebating an insurance deductible. We never do.</span></div>
@@ -258,6 +258,7 @@ ${page.body}
 ${footer(site, model)}
 <script src="/main.js" defer></script>
 ${gaId ? `<script src="/analytics.js" defer></script>` : ''}
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>`;
 }

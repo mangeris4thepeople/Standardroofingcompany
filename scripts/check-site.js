@@ -95,7 +95,9 @@ for (const [route, html] of routes) {
   if (!is404 && !inSitemap.has(route)) bad(route, 'not in sitemap');
   if (is404 && inSitemap.has(route)) bad(route, '404 should not be in sitemap');
   // FAQ block present => FAQPage schema present
-  if (/class="faq"/.test(html) && !/"FAQPage"/.test(html)) bad(route, 'FAQ block without FAQPage schema');
+  // /faq gathers answers whose FAQPage markup lives on their source pages; marking them up twice
+  // goes against Google's guidance for repeated FAQ content, so the hub is exempt.
+  if (route !== '/faq' && /class="faq"/.test(html) && !/"FAQPage"/.test(html)) bad(route, 'FAQ block without FAQPage schema');
   // breadcrumbs on nested pages
   if (route !== '/' && !is404 && !/"BreadcrumbList"/.test(html)) bad(route, 'nested page without BreadcrumbList');
 }

@@ -318,6 +318,44 @@ ${H.faqBlock(p.faq, 'Free estimate questions')}${H.ctaBand(site)}`;
   render('/404', { title: p.title, description: p.description, body, noindex: true, ogImage: '/images/og/404.png', graph: [org, website, webPage('/404', p.title + site.titleSuffix, p.description)] }, { noindex: true });
 })();
 
+// ---------- FAQ HUB ----------
+// Every answer already published on the service, area, casualty, guide, and company pages,
+// gathered in one place with a link back to the page it came from. The source pages keep their
+// FAQPage markup, so this page is a CollectionPage and does not mark up the answers twice.
+(function faqHub() {
+  const route = '/faq';
+  const crumbs = [{ name: 'Home', href: '/' }, { name: 'FAQ' }];
+  const groups = [
+    ['Roofing services', model.services.map((x) => ({ href: `/services/${x.slug}`, name: x.name, faq: x.faq }))],
+    ['Service areas', model.cities.map((x) => ({ href: `/roofing/${x.slug}`, name: `Roofing in ${x.name}`, faq: x.faq }))],
+    ['Casualty and litigation', [].concat(model.casualty.landing && model.casualty.landing.faq ? [{ href: '/casualty', name: 'Casualty and litigation', faq: model.casualty.landing.faq }] : [], (model.casualty.pages || []).map((x) => ({ href: `/casualty/${x.slug}`, name: x.name, faq: x.faq })))],
+    ['Roofing guides', model.blog.map((x) => ({ href: `/blog/${x.slug}`, name: x.h1, faq: x.faq }))],
+    ['Estimates, financing, and warranty', ['free-roof-estimate', 'financing', 'warranty'].map((k) => ({ href: `/${k}`, name: model.pages[k].h1, faq: model.pages[k].faq }))],
+  ].map(([t, items]) => [t, items.filter((it) => it.faq && it.faq.length)]).filter(([, items]) => items.length);
+  const count = groups.reduce((n, [, items]) => n + items.reduce((m, it) => m + it.faq.length, 0), 0);
+  const body = `${pageHero({ crumbs, eyebrow: 'Frequently asked questions', h1: 'Roofing questions, answered', lede: `${count} answers on roof types, hail and storm damage, insurance claims, inspections, estimates, and roofing in each town we serve, gathered from across the site.` })}
+${groups.map(([t, items]) => `<section class="sec-faq"><div class="wrap narrow"><div class="sec-head"><span class="eyebrow">Questions</span><h2>${esc(t)}</h2></div>${items.map((it) => `<h3><a href="${it.href}">${esc(it.name)}</a></h3><div class="faq">${it.faq.map((f) => `<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('')}</div>`).join('')}</div></section>`).join('\n')}
+${H.quoteForm(site)}${H.ctaBand(site)}`;
+  const title = 'Roofing FAQ';
+  const description = 'Answers on metal, slate, tile, and shingle roofs, hail damage, insurance claims, inspections, and estimates in Northern Colorado. Call for a free estimate.';
+  const graph = [org, website, webPage(route, title + site.titleSuffix, description, 'CollectionPage'), H.breadcrumbSchema(site, crumbs)];
+  render(route, { title, description, body, current: '/faq', ogImage: '/images/og/about.png', graph }, { priority: '0.6', changefreq: 'monthly' });
+})();
+
+// ---------- PRIVACY ----------
+// From content/privacy.json, built by tools/privacy_text.py from what the site actually runs.
+(function privacy() {
+  const P = JSON.parse(fs.readFileSync(path.join(ROOT, 'content', 'privacy.json'), 'utf8'));
+  const route = '/privacy';
+  const crumbs = [{ name: 'Home', href: '/' }, { name: 'Privacy' }];
+  const body = `<section class="page-hero"><div class="wrap narrow">${H.breadcrumbs(crumbs)}<span class="eyebrow">Effective ${esc(P.effective)}</span><h1>Privacy policy</h1><p class="lede">What this website collects, why, and what you can do about it.</p></div></section>
+<section class="sec-prose single"><div class="wrap"><article class="prose">${P.sections.map((x) => `<section class="prose-sec"><h2>${esc(x.h)}</h2>${x.p.map((t) => `<p>${esc(t)}</p>`).join('')}</section>`).join('')}</article></div></section>`;
+  const title = 'Privacy Policy';
+  const description = 'What Standard Roofing Company collects on this site, how estimate requests, photos, and analytics are handled, and how to ask us to delete your data.';
+  const graph = [org, website, webPage(route, title + site.titleSuffix, description), H.breadcrumbSchema(site, crumbs)];
+  render(route, { title, description, body, current: '/privacy', ogImage: '/images/og/contact.png', graph }, { priority: '0.3', changefreq: 'yearly' });
+})();
+
 // ---------- sitemap, robots, feed, llms.txt, redirects ----------
 fs.writeFileSync(path.join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map((p) => `  <url><loc>${site.url}${p.path === '/' ? '/' : p.path}</loc><lastmod>${p.lastmod || TODAY}</lastmod><changefreq>${p.changefreq || 'monthly'}</changefreq><priority>${p.priority || '0.6'}</priority></url>`).join('\n')}\n</urlset>\n`);
 fs.writeFileSync(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${site.url}/sitemap.xml\n`);
@@ -350,6 +388,8 @@ ${model.blog.map((b) => `- [${b.h1}](${site.url}/blog/${b.slug}): ${b.excerpt}`)
 - [Gallery](${site.url}/gallery)
 - [Reviews](${site.url}/reviews)
 - [Contact](${site.url}/contact)
+- [FAQ](${site.url}/faq): every answer on the site in one place, linked to its source page
+- [Privacy policy](${site.url}/privacy)
 - [Sitemap](${site.url}/sitemap.xml)
 `;
 fs.writeFileSync(path.join(DIST, 'llms.txt'), llms);
